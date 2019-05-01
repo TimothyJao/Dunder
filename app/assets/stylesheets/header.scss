@@ -1,0 +1,32 @@
+header{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header-text{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.big{
+    text-align: center;
+    font-size: 36px;
+    position: absolute;
+}
+
+.small{
+    width: 670px;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    top: 52px;
+    line-height: 24px;
+}
+
