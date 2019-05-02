@@ -1,10 +1,21 @@
 import React from "react";
 import { Link }  from "react-router-dom";
 
+const Home = (props) => {
+    const authButtons = () => (
+        <>
+            <Link className="nav-button" to="/login">Login</Link>
+            <p> | </p>
+            <Link className="nav-button" to="/signup">Sign Up</Link>
+        </>
+    )
 
-const Home = () => {
-
-
+    const logoutButton = () => (   
+        <>
+            <button className="header-button" onClick={props.logout}>Log Out</button>
+        </>
+    )
+    const rightNav = props.currentUser ? logoutButton() : authButtons()
 
     return(
         <>
@@ -16,10 +27,7 @@ const Home = () => {
                 </div>
 
                 <div className="right-nav">
-                    <Link className = "nav-button" to="/login">Login</Link>
-                    <p> | </p>
-                    <Link className="nav-button" to="/signup">Sign Up</Link>
-                    
+                    {rightNav}
                 </div>
             </nav>
             <header>

@@ -19,24 +19,28 @@ nav{
 }
 
 .right-nav{
-    position: relative;
-    top: 10px;
     width: 250px;
 }
 
 .right-nav p{
-    font-size: 13px;
+    font-size: 30px;
     color: #828282;
+    position: relative;    
+    top: 12px;
+
+    vertical-align: middle;
 }
 
 .nav-button{
-    display: block;
+    position: relative;
+    top: 10px;
+    padding: 8px;
+    height: 20px;
+    width: 60px;
     border: 1px solid #828282 !important;
     border-radius: 20px;
-    width: 65px;
-    height: 20px;
+    vertical-align: middle;
     text-align: center;
-    position: relative;    
     transition: 1s;
 }
 
@@ -72,4 +76,26 @@ a{
 
 a:hover {
     color: white;
+}
+
+.header-button{
+    position: relative;
+    top: 10px;
+    color: white;
+    padding: 8px;
+    height: 40px;
+    width: 90px;
+    border: 1px solid #828282 !important;
+    border-radius: 20px;
+    vertical-align: middle;
+    text-align: center;
+    background: transparent;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.header-button:active, .header-button:focus {
+  outline: 0;
+  border: none;
+  outline-style: none;
 }

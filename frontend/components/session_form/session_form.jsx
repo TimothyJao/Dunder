@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(()=>this.props.history.push('/'), ()=>this.props.history.push(`/${this.props.formType}`));
     }
 
     renderErrors() {
@@ -36,12 +36,16 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <>
+            <>              
                 <section className = "session-form">
+                    <div className="index-link">
+                        <Link to="/" className="header-link">
+                            <h1 className="header-link">Erised</h1>
+                        </Link>
+                    </div>
                     <div className="login-box">
                         <div className="welcome">
-                            <h3>Welcome back!</h3>
-                            <p>We're so excited to see you again!</p>
+                            {this.props.welcomeMessage}
                             {this.renderErrors()}
                         </div>
                         <form onSubmit={this.handleSubmit}>
@@ -55,6 +59,7 @@ class SessionForm extends React.Component {
                             <br />
                             <input className="submit" type="submit" value={this.props.formType} />
                         </form>
+                        {this.props.navLink}
                     </div>
                 </section>
             </>

@@ -4,7 +4,8 @@
 
 .main-img{
     position: relative;
-    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
     top: 230px;
     background-size:100% auto;
     max-width: 100%;
