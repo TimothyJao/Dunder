@@ -6,6 +6,15 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
+    has_many :user_servers,
+    foreign_key: :user_id,
+    class_name: :User_Server
+
+    has_many :servers,
+    through: :user_servers,
+    source: :server
+
+
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(username, password)
@@ -34,5 +43,7 @@ class User < ApplicationRecord
     def ensure_session_token
         self.session_token ||= SecureRandom.urlsafe_base64
     end
+
+    
 end
         
