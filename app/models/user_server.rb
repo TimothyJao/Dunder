@@ -9,4 +9,5 @@ class User < ApplicationRecord
     belongs_to :server,
     foreign_key: :user_servers,
     class_name: :Server
+    
 end
