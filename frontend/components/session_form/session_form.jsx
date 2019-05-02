@@ -23,17 +23,17 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
-
-        debugger
-        return (
-            <ul className = "errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+        if (this.props.errors){
+            return (
+                <ul className = "errors">
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
     }
 
     render() {
