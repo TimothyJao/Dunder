@@ -2,6 +2,9 @@ class Api::UsersController < ApplicationController
 
     before_action :require_logged_in
 
+    def index
+        @servers = Server.find(user_id)
+
     def create
         @server = Server.new(server_params)
 
