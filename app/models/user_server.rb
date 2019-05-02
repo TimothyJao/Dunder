@@ -1,9 +1,9 @@
-class User < ApplicationRecord
+class User_Server < ApplicationRecord
 
     validates :owner_id, :server_id, presence: true
 
     belongs_to :user,
-    foreign_key: :owner_id,
+    foreign_key: :user_id,
     class_name: :User
 
     belongs_to :server,
