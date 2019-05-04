@@ -15,7 +15,33 @@ const Home = (props) => {
             <button className="header-button" onClick={props.logout}>Log Out</button>
         </>
     )
-    const rightNav = props.currentUser ? logoutButton() : authButtons()
+
+    const redirectToGuest = () => (
+        props.history.push("./guest")
+    )
+
+    const redirectBrowse = () => (
+        props.history.push("./guest")
+    )
+
+    const loginGuest = () => (
+        <>
+            <button className="redirect-button" onClick={redirectToGuest}>Log in as guest</button>
+        </>
+    )
+
+    const redirectToBrowse = () => (
+        props.history.push("./browse")
+    )
+    
+    const openBrowse = () => (
+        <>
+            <button className="redirect-button" onClick={redirectToBrowse}>Browse your servers</button>
+        </>
+    )
+
+    const rightNav = props.currentUser ? logoutButton() : authButtons();
+    const redirectButton = props.currentUser ? openBrowse() : loginGuest();
 
     return(
         <>
@@ -39,15 +65,18 @@ const Home = (props) => {
                         servers and hassling with Skype. Simplify your life.
                     </p>
                 </div>
-                <button className="signup">Sign Up</button>
-                <button className="guest">Log in as guest</button>
+                {redirectButton}
             </header>
             <section className="img-section">
                 <img className="main-img" src={window.images.background} />
             </section>
-            <footer>
-                
+            <hr className="footer-divider top" width="80%" />
+            <footer className="links-container">
+                <i class="fas fa-envelope"></i>
+                <a href="https://github.com/TimothyJao"><i className="fab fa-github" /> </a>
+                <a href="https://www.linkedin.com/in/timothy-jao-670718b5/"><i className="fab fa-linkedin" /></a>
             </footer>
+            <hr className="footer-divider bottom" width="80%" />
         </>         
     )  
 }                           

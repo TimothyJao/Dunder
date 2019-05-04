@@ -50,7 +50,7 @@ html, body {
 
 .welcome p{
     position: relative;
-    font-size: 20px;
+    font-size: 16px;
     top: 45px;
     color: #808080;
 }
@@ -89,9 +89,10 @@ input{
 
 .submit{
     position: relative;
+    text-align: center;
     top: 70px;
     height: 25%;
-    width: 81%;
+    width: 80%;
     background: #c9b800;
     color: white;
     border: 0;
@@ -116,13 +117,25 @@ input{
 
 .switch {
     display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 140px;
 }   
 
 ul {
     position: relative;
     right: 20px;
+}
+
+.switch-container{
+    width: 250px;
+    position: relative;
+    transform: translateX(-50%);
+    top: 33%;
+    left: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.switch-container p{
+    font-size: 16px;
+    color: #bbbbbb;
 }

@@ -13,7 +13,7 @@ class GuestForm extends React.Component {
     }
 
     endGuest (){
-        this.props.history.push('/')
+        this.props.history.push('/browse')
     }
 
     

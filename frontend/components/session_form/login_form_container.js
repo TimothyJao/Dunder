@@ -16,6 +16,8 @@ const mapStateToProps = ({ errors }) => {
             <> 
                 {/* <Link className="switch" to="/signup">sign up instead</Link> */}
                 <Link className="switch" to ="/guest">login as guest</Link>
+                <p> or </p>
+                <Link className="switch" to="/signup">sign up instead</Link> 
             </>
     };
 };

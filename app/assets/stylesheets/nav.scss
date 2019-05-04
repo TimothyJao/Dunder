@@ -31,27 +31,30 @@ nav{
     vertical-align: middle;
 }
 
-.nav-button{
+.right-nav .nav-button{
+    font-size: 12px;
     position: relative;
     top: 10px;
-    padding: 8px;
+    margin: 5px;
+    padding: 4px;
     height: 20px;
-    width: 60px;
-    border: 1px solid #828282 !important;
+    width: 56px;
+    line-height: 17px;
+    color: #b1b1b2;
+    border: 2px solid #b1b1b2;
     border-radius: 20px;
-    vertical-align: middle;
     text-align: center;
-    transition: 1s;
+    transition: .5s;
 }
 
 .nav-button:hover{
-    color: black;
-    background: #828282;
+    border: 2px solid white;
+    color: white;
 }
 
 .main-nav {
     position: relative;
-    width: 500px;
+    width: 300px;
 
 }
 

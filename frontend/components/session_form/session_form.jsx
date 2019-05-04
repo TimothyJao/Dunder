@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(()=>this.props.history.push('/'), ()=>this.props.history.push(`/${this.props.formType}`));
+        this.props.processForm(user).then(()=>this.props.history.push('/browse'), ()=>this.props.history.push(`/${this.props.formType}`));
     }
 
     renderErrors() {
@@ -61,7 +61,10 @@ class SessionForm extends React.Component {
                             <br />
                             <input className="submit" type="submit" value={this.props.formType} />
                         </form>
-                        {this.props.navLink}
+                        <div className = "switch-container">
+                            {this.props.navLink}
+                        </div>
+                        
                     </div>
                 </section>
             </>

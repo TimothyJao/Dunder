@@ -1,0 +1,151 @@
+.browseForm{
+    display: flex;
+}
+.side-nav{
+    display: flex;
+    position: absolute;
+    width: 312px;
+    height: 100%;
+}
+
+.server-container{
+    display: inline-block;
+    //position: relative;
+    width: 72px;
+    height: 100%;
+    background-color: #1f2124;
+}
+
+.channel-container{
+    display: inline-block;
+    //position: relative;
+    width: 240px;
+    height: 100%;
+    background-color: #2f3035;
+}
+
+.main-content{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    left: 312px;
+    height: 100%;
+    background: white;
+}
+
+.home-link{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: .1s;
+}
+
+.home-link:active{
+    top: 2px;
+}
+
+.home-link{
+    position: relative;
+    left: 5px;
+    width: 52px;
+    height: 52px;
+    background-color: #7289da;
+    border-radius: 20px;
+}
+
+.fa-home:before{
+    font-size: 28px;
+    position: relative;
+    top: 12px;
+}
+
+.home-divider{
+    position: relative;
+    top: 10px;
+    height: 2px;
+    color: #2f3035;
+    background-color:  #2f3035;
+    border-width: 0px
+}
+
+.add-button{
+    width: 52px;
+    height: 52px;
+    background-color: #2f3035;
+    border-radius: 30px;
+    position: relative;
+    left: 5px;
+    display: flex;
+    outline: 0;
+    border: 0;
+    justify-content: center;
+    transition: .1s;
+}
+
+.add-button:active{
+    top: 2px;
+}
+
+
+.add-button:hover {
+    border-radius: 20px;
+    background-color: #43b581;
+    .fa-plus:before{
+    color: white;
+}
+}
+
+.fa-plus:before{
+    font-size: 28px;
+    position: relative;
+    color: #43b582;
+}
+
+
+
+.server-link{
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    transition: .1s;
+}
+
+.server-link:active{
+    top: 12px;
+}
+
+
+$size: 4px;
+
+.circleThing {
+  background: #9e978e;
+  display: inline-block;
+  height: $size * 0;
+  width: $size;
+  border-bottom-right-radius: $size * 2;
+  border-top-right-radius: $size * 2;
+  position: relative;
+  transition: .2s;
+}
+
+.button-group:hover{
+    .circleThing{
+        height: $size * 5;
+    }
+}
+
+.logoutButton{
+    position: relative;
+    left: 700px;
+}
+
+.button-group{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+
+
+
