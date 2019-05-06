@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     has_many :user_servers,
     foreign_key: :user_id,
-    class_name: :User_Server
+    class_name: :UserServer
 
     has_many :servers,
     through: :user_servers,

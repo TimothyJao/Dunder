@@ -1,4 +1,4 @@
-class User_Server < ApplicationRecord
+class UserServer < ApplicationRecord
 
     validates :user_id, :server_id, presence: true
 

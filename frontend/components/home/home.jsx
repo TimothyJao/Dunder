@@ -72,7 +72,7 @@ const Home = (props) => {
             </section>
             <hr className="footer-divider top" width="80%" />
             <footer className="links-container">
-                <i class="fas fa-envelope"></i>
+                <i className="fas fa-envelope"></i>
                 <a href="https://github.com/TimothyJao"><i className="fab fa-github" /> </a>
                 <a href="https://www.linkedin.com/in/timothy-jao-670718b5/"><i className="fab fa-linkedin" /></a>
             </footer>

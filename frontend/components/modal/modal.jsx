@@ -10,8 +10,14 @@ function Modal({ modal, closeModal }) {
     }
     let component;
     switch (modal) {
+        case 'chooseOption':
+            component = <ServerFormContainer choice={"option"}/>;
+            break;
         case 'createServer':
-            component = <ServerFormContainer />;
+            component = <ServerFormContainer choice={"create"} />;
+            break;
+        case 'joinServer':
+            component = <ServerFormContainer choice={"join"} />;
             break;
         default:
             return null;

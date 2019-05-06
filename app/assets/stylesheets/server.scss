@@ -1,0 +1,234 @@
+.server-box{
+    width: 540px;
+    height: 420px;
+    border-radius: 3px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.OH{
+    color: #7289da;
+    font-weight: 700;
+    position: relative;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.selections{
+    width: 452px;
+    height: 290px;
+    position: relative;
+    top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selectOne{
+    display: inline-block;
+    flex-wrap: wrap;
+    background:white;
+    width: 196px;
+    height: 268px;
+    justify-content: center;
+    border: 1px solid #e5e5e5;
+    padding: 10px
+}
+
+.create{
+    margin-top: 20px;
+    color: #7289da;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    height: 18px;
+    text-align: center;
+}
+
+.description{
+    color: #99aab4;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 15px;
+    margin-top: 16px;
+    line-height: 20px;
+}
+
+.icon-holder{
+    height: 78px;
+    margin: 26px;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-user-plus{
+    color: #738bd8;
+    font-size: 80px;
+}
+
+.create-button{
+    background: #7289da;
+    padding: 14px 20px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.fa-sign-in-alt{
+    color: #43b580;
+    font-size: 80px;
+}
+
+.join-button{
+    background: #3ca374;
+    padding: 14px 20px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.join{
+    margin-top: 20px;
+    color: #3ea475;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    height: 18px;
+    text-align: center;
+}
+
+.selectOne:hover{
+    cursor: pointer;
+    .create-button{
+        background-color: #677bc3;
+    }
+}
+
+.join-box:hover{
+    .join-button{
+        background-color: #359368;
+    }
+}
+
+.create-top{
+    padding: 28px 40px 0 40px;
+    width: 100%;
+}
+
+.CYS{
+    padding-top: 20px;
+    color: #7289da;
+    font-weight: 700;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.server-name{
+    color: #88919c;
+    font-size: 11px;
+    font-weight: 700;
+    position: relative;
+    bottom: 60px;
+}
+
+.server-name input{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #7289da;
+    border-radius: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #36373b;
+}
+
+.server-submit{
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+    bottom: 15px;
+    text-align: center;
+    height: 25%;
+    width: 80%;
+    background: #7289da;
+    color: white;
+    border: 0;
+    outline: 0;
+    transition: .1s, .3s;
+}
+
+.server-submit:hover{
+    background: #677bc3;
+}
+
+.blahblah{
+    color: #99aab4;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px;
+}
+
+.create-header{
+    padding: 30px 0;
+}
+
+.BACK{
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+    width: 50px;
+    padding-bottom: 10px;
+}
+
+.BACK:hover{
+    border-bottom: 2px solid #949494;
+}
+
+.BACK i{
+    font-size: 20px;
+    color: #99aab4;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.BACK p{
+    font-size: 12px;
+    color: #99aab4;
+    display: inline-block;
+    position: relative;
+    left: 3px;
+}
+
+.JAS{
+    padding-top: 20px;
+    color: #43b582;
+    font-weight: 700;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.server-join{
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+    bottom: 15px;
+    text-align: center;
+    height: 25%;
+    width: 80%;
+    background: #43b582;
+    color: white;
+    border: 0;
+    outline: 0;
+    transition: .1s, .3s;
+}
+
+.server-join:hover{
+    background: #3ca374;
+}

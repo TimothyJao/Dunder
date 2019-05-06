@@ -13,12 +13,19 @@
     //position: relative;
     width: 72px;
     height: 100%;
+    position: fixed;
+    overflow-y: scroll;
     background-color: #1f2124;
+}
+
+.server-container::-webkit-scrollbar{
+    display: none;
 }
 
 .channel-container{
     display: inline-block;
-    //position: relative;
+    position: relative;
+    left: 72px;
     width: 240px;
     height: 100%;
     background-color: #2f3035;
@@ -33,13 +40,6 @@
     background: white;
 }
 
-.home-link{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    transition: .1s;
-}
-
 .home-link:active{
     top: 2px;
 }
@@ -51,6 +51,9 @@
     height: 52px;
     background-color: #7289da;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    transition: .1s;
 }
 
 .fa-home:before{
@@ -59,13 +62,12 @@
     top: 12px;
 }
 
-.home-divider{
+.server-divider{
     position: relative;
-    top: 10px;
     height: 2px;
-    color: #2f3035;
     background-color:  #2f3035;
-    border-width: 0px
+    border-width: 0px;
+    margin: 8px 14.406px 0px;
 }
 
 .add-button{
@@ -91,8 +93,8 @@
     border-radius: 20px;
     background-color: #43b581;
     .fa-plus:before{
-    color: white;
-}
+        color: white;
+    }
 }
 
 .fa-plus:before{
@@ -100,21 +102,6 @@
     position: relative;
     color: #43b582;
 }
-
-
-
-.server-link{
-    position: relative;
-    top: 10px;
-    display: flex;
-    justify-content: center;
-    transition: .1s;
-}
-
-.server-link:active{
-    top: 12px;
-}
-
 
 $size: 4px;
 
@@ -145,7 +132,62 @@ $size: 4px;
     align-items: center;
     position: relative;
     top: 10px;
+    padding: 0 0 10px 0;
 }
 
+.server-list{
+    padding: 0;
+    right: 0;
+}
 
+.server-link{
+    width: 52px;
+    height: 52px;
+    background-color: #2f3035;
+    border-radius: 30px;
+    position: relative;
+    left: 5px;
+    display: flex;
+    outline: 0;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+}
 
+.server-link p{
+    color: #b9bbbe;
+    font-weight: 600;
+}
+
+.server-link:active{
+    top: 2px;
+}
+
+.server-link:hover {
+    border-radius: 20px;
+    background-color: #7289da;
+    p{
+        color: white;
+    }
+}
+
+.channel-divider{
+    background-color: #1f2124;
+    height: 2px;
+    border-width: 0px;
+    position: relative;
+    margin: 0px;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.header-content span{
+    position: relative;
+    left: 15px;
+    font-weight: 600;
+}

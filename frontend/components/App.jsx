@@ -5,6 +5,7 @@ import LogInFormContainer from './session_form/login_form_container'
 import BrowseFormContainer from './browse_form/browse_form_container'
 import SignUpFormContainer from './session_form/signup_form_container'
 import HomeContainer from './home/home_container'
+import ShowServerContainer from './browse_form/show_server_container'
 import Modal from './modal/modal'
 import GuestForm from './session_form/guest_session_form'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
@@ -13,7 +14,8 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util'
 const App = () => (
     <div className = "app-content">
         <Modal />
-        <ProtectedRoute path ="/browse" component = {BrowseFormContainer}/>
+        <ProtectedRoute path="/browse/:server_id" component = {ShowServerContainer} />
+        <ProtectedRoute exact path ="/browse" component = {BrowseFormContainer}/>
         <AuthRoute exact path ="/guest" component={GuestForm} />
         <AuthRoute exact path ="/login" component = {LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />

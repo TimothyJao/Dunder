@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
-import {fetchServers} from '../../actions/server_actions'
+import { fetchServers } from '../../actions/server_actions'
 import BrowseForm from './browse_form.jsx';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        username: state.session.username,
-        servers: state.entities.servers,
+        state: state,
+        serverId: parseInt(ownProps.match.params.server_id),
+        current_user: Object.values(state.entities.users),
+        servers: Object.values(state.entities.servers)
     };
 };
 

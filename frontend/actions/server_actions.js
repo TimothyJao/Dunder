@@ -26,15 +26,16 @@ export const receiveErrors = errors => ({
 export const createServer = server => dispatch => {
     return(
         APIUtil.createServer(server).then(
-            server => (dispatch(receiveCurrentServer(server))), 
-            err => (dispatch(receiveErrors(err.responseJSON))))
+            server => (dispatch(receiveCurrentServer(server))),
+            err => (dispatch(receiveErrors(err.responseJSON)))
+        )
     )
 }
 
-export const fetchServer = id => dispatch => {
+export const fetchServer = server => dispatch => {
     return(
-        APIUtil.fetchServer(id).then(
-            server => (dispatch(receiceCurrentServer(server))),
+        APIUtil.fetchServer(server).then(
+            server => (dispatch(receiveCurrentServer(server))),
             err => (dispatch(receiveErrors(err.responseJSON)))
         )
     )
@@ -43,8 +44,14 @@ export const fetchServer = id => dispatch => {
 export const fetchServers = () => dispatch => {
     return (
         APIUtil.fetchServers().then(
-            servers => (dispatch(receiceAllServers(servers))),
+            servers => (dispatch(receiveAllServers(servers))),
             err => (dispatch(receiveErrors(err.responseJSON)))
         )
+    )
+}
+
+export const createUserServer = (userServer) => {
+    return(
+        APIUtil.createUserServer(userServer)
     )
 }
