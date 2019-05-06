@@ -17,7 +17,7 @@ class Api::ServersController < ApplicationController
     end
 
     def show
-        @server = Server.find_by(params[:server][:url])
+        @server = Server.find_by(id: params[:id])
         if @server
             render "api/servers/show"
         else

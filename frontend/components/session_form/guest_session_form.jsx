@@ -13,6 +13,7 @@ class GuestForm extends React.Component {
     }
 
     endGuest (){
+        this.props.processForm({ username: "harry.j.potter", password: "password" })
         this.props.history.push('/browse')
     }
 

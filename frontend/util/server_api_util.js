@@ -6,13 +6,20 @@ export const createServer = (server) => (
     })
 )
 
-export const fetchServer = (server) => (
+export const fetchServer = (id) => {
+    return(
+        $.ajax({
+            method: "GET",
+            url: `api/servers/${id}`
+        })
+    )
+    
     $.ajax({
         method: "GET",
-        url: `api/server/${server}`,
-        data: {id}
+        url: `api/servers/${id}`
     })
-)
+}
+   
 
 export const fetchServers = () => (
     $.ajax({
@@ -21,10 +28,12 @@ export const fetchServers = () => (
     })
 )
 
-export const createUserServer = (userServer) => (
-    $.ajax({
-        method: "POST",
-        url: "api/user",
-        data: { userServer }
-    })
-)
+export const createUserServer = (userServer) => {
+    return(
+        $.ajax({
+            method: "POST",
+            url: "/api/user_servers",
+            data: { userServer }
+        })
+    )
+}

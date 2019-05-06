@@ -1,8 +1,13 @@
-class Api::UsersServersController < ApplicationController
+class Api::UserServersController < ApplicationController
     def create
-        @user_server = User_Server.new(user_server_params)
-        if @user_server.save
-            render "api/users_servers/show"
+        @server_id = Server.find_by(url: params[:userServer][:url]).id
+        if @server_id
+            @user_server = UserServer.new({user_id: current_user.id, server_id: @server_id})
+            if @user_server.save
+                render "api/users_servers/show"
+            else 
+                render json: @user.errors.full_messages, status: 422
+            end
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -11,7 +16,7 @@ class Api::UsersServersController < ApplicationController
     private
 
     def user_server_params
-        params.require(:user_server).permit(:user_id, :server_id)
+        params.require(:userServer).permit(:url)
     end
 end
         

@@ -10,6 +10,7 @@ class ServerForm extends React.Component {
             url: ""
         };
         this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
+        this.handleJoinSubmit = this.handleJoinSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
 
@@ -29,7 +30,7 @@ class ServerForm extends React.Component {
     handleJoinSubmit(e) {
         e.preventDefault();
         const server = Object.assign({}, this.state);
-        this.props.fetchServer(server).then((server) => {
+        this.props.createUserServer(server).then((server) => {
             this.props.closeModal();
             this.props.history.push(`/browse/${server.currentServer.id}`);
         });
@@ -99,7 +100,7 @@ class ServerForm extends React.Component {
                     </div>
                     <form className="create-form" onSubmit={this.handleCreateSubmit}>
                         <label className="server-name">SERVER NAME <br />
-                            <input type="text" value={this.state.name} onChange={this.update('url')} />
+                            <input type="text" value={this.state.name} onChange={this.update('name')} />
                         </label>
                         <br />
                         <input className="server-submit" type="submit" value={"Create Server"} />
@@ -129,7 +130,7 @@ class ServerForm extends React.Component {
                     </div>
                     <form className="create-form" onSubmit={this.handleJoinSubmit}>
                         <label className="server-name">SERVER NAME <br />
-                            <input type="text" value={this.state.name} onChange={this.update('name')} />
+                            <input type="text" value={this.state.url} onChange={this.update('url')} />
                         </label>
                         <br />
                         <input className="server-join" type="submit" value={"Join Server"} />

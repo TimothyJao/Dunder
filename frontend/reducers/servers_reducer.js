@@ -6,7 +6,6 @@ const serversReducer = (state = {}, action) => {
         case RECEIVE_ALL_SERVERS:
             return action.servers;
         case RECEIVE_CURRENT_SERVER:
-            debugger
             return Object.assign({}, state, {[action.currentServer.id]: action.currentServer});
         default:
             return state;
