@@ -77,7 +77,7 @@ class ServerForm extends React.Component {
                             <i className="fas fa-sign-in-alt"></i>
                         </div>
                         <div className="join-button">
-                            <p className="prompt">Create a server</p>
+                            <p className="prompt">Join a server</p>
                         </div>
                     </div>
                 </div>

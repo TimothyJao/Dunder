@@ -80,9 +80,8 @@ class ChatRoom extends React.Component {
             oldMessageList = this.props.messages.map(data =>{
                 return (
                     <li key={data.message.id} className="chat-message">
-                        {data.user.username}
-                        {data.message.message}
-                        <div ref={this.bottom} />
+                        <p className="username">{data.user.username}</p>
+                        <p className="message">{data.message.message}</p>
                     </li>
                 )
             })

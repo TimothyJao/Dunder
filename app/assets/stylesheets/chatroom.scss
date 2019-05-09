@@ -7,17 +7,64 @@
 }
 
 .message-input{
-    position: fixed;
-    top: 90%;
-    height: 20px;
+
+    
+    height: 25px;
     padding: 10px;
     border: none;
     background: #f6f6f7;
-    width: 75%;
     color: #78838f;
     font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.message-form{
+    position: fixed;
+    top: 84%;
+    width: 86%;
 }
 
 .message-form ::placeholder{
-    color: #dbdee0;
+    color: #97a7b7;
+}
+
+.message-list{
+    position: fixed;
+    height: 83%;
+    left: 355.44px;
+    width: 66.3%;
+    padding-right: 65px;
+    background: white;
+    // border-bottom: 1px solid #eceeef;
+    border-bottom: 1px solid green;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7289da; 
+  border-radius: 10px;
+}
+
+.chatroom-container {
+    list-style: none;
+}
+
+.chat-message{
+    color: black;
+}
+
+.chat-message p{
+    color: black;
 }
