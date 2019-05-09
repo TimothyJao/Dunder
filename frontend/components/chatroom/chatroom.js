@@ -6,6 +6,7 @@ class ChatRoom extends React.Component {
         super(props);
         this.state = {messages:[]};
         this.bottom = React.createRef();
+        this.render = this.render.bind(this)
         this.createSocket = this.createSocket.bind(this)
     }
 
@@ -44,7 +45,9 @@ class ChatRoom extends React.Component {
         this.props.fetchMessages(this.props.parentId)
     }
 
-    componentDidUpdate(prevProps){
+    componentDidUpdate(prevProps) {
+        if (!this.bottom.current) return null;
+        this.bottom.current.scrollIntoView();
         if (prevProps.parentId != this.props.parentId){
             this.messageList = [];
             this.setState({messages:[]})
@@ -64,7 +67,7 @@ class ChatRoom extends React.Component {
 
     render(){
         this.messageList = [];
-        this.messageList = this.state.messages.map(data => {
+        this.messageList = this.state.messages.map(function(data) {
             return (
                 <li key={data.message.id} className="chat-message">
                     {data.user.username}
@@ -72,7 +75,7 @@ class ChatRoom extends React.Component {
                     <div ref={this.bottom} />
                 </li>
             );
-        });
+        }, this);
         
         let oldMessageList = [];
 
