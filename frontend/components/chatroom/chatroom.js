@@ -48,7 +48,7 @@ class ChatRoom extends React.Component {
     componentDidUpdate(prevProps) {
         if (!this.bottom.current) return null;
         this.bottom.current.scrollIntoView();
-        if (prevProps.parentId != this.props.parentId){
+        if (prevProps.parentId != this.props.parentId) {
             this.messageList = [];
             this.setState({messages:[]})
             this.props.fetchMessages(this.props.parentId)
@@ -70,8 +70,9 @@ class ChatRoom extends React.Component {
         this.messageList = this.state.messages.map(function(data) {
             return (
                 <li key={data.message.id} className="chat-message">
-                    {data.user.username}
-                    {data.message.message}
+                    <hr className="message-divider" width="100%"></hr>
+                    <p className="username">{data.user.username}</p>
+                    <p className="message">{data.message.message}</p>
                     <div ref={this.bottom} />
                 </li>
             );
@@ -83,14 +84,16 @@ class ChatRoom extends React.Component {
             oldMessageList = this.props.messages.map(data =>{
                 return (
                     <li key={data.message.id} className="chat-message">
+                        <hr className="message-divider" width="100%"></hr>
                         <p className="username">{data.user.username}</p>
                         <p className="message">{data.message.message}</p>
+                        <div ref={this.bottom} />
                     </li>
                 )
             })
         }
 
-        this.messageList = oldMessageList.concat(this.messageList);
+        this.messageList = oldMessageList.concat(this.messageList, [<br/>]);
 
         return(
             <div className="chatroom-container">               
