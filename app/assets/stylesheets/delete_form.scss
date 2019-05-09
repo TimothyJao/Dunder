@@ -1,0 +1,119 @@
+.delete-leave{
+    width: 440px;
+    height: 200px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-leave-header{
+    padding: 20px;
+    width: 400px;
+    height: 20px;
+    font-weight: 600;
+}
+
+.header-print{
+    color: #4f545c;
+}
+
+.delete-leave-message{
+    padding: 0px 12px 20px 20px;
+    width: 400px;
+    height: 42px;
+}
+
+.message-print{
+    color: #767a81;
+    font-size: 14px;
+}
+
+.dl-server-name{
+    color: inherit;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.delete-leave-selection{
+    padding: 20px;
+    height: 38px;
+    width: 400px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dl-cancel{
+    padding: 2px 16px;
+    width: 64px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dl-cancel:hover{
+    p{
+        text-decoration: underline;
+    }
+    
+}
+
+.dl-cancel p{
+    font-size: 14px;
+    color: #767a81;
+}
+
+.dl-dl{
+    padding: 2px 16px;
+    background: #F04747;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dl-dl:hover{
+    background-color: #d84040;
+}
+
+.dl-dl p{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.invite-message{
+    padding: 0px 20px 20px 20px;
+    width: 400px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invite-message p{
+    color: #767a81;
+    font-size: 15px;
+}
+
+.invite-selection{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.invite-selection p{
+    color: #7289da;
+    font-size: 24px;
+}
+
+.invite-header{
+    padding: 20px;
+    width: 400px;
+    height: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}

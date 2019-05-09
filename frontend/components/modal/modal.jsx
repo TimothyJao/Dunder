@@ -1,10 +1,12 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
+import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux';
 import ServerFormContainer from '../server/server_form_container';
+import DeleteServerContainer from '../delete_server/delete_server_container'
 
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, ownProps }) {
     if (!modal) {
         return null;
     }
@@ -19,6 +21,15 @@ function Modal({ modal, closeModal }) {
         case 'joinServer':
             component = <ServerFormContainer choice={"join"} />;
             break;
+        case 'deleteServer':
+            component = <DeleteServerContainer choice={"delete"}/>
+            break;
+        case 'leaveServer':
+            component = <DeleteServerContainer choice={"leave"}/>
+            break;
+        case 'inviteFriends':
+            component = <DeleteServerContainer choice={"invite"}/>
+            break;
         default:
             return null;
     }
@@ -31,7 +42,7 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
         modal: state.ui.modal
     };

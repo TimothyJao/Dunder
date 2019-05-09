@@ -1,4 +1,9 @@
 class Api::UserServersController < ApplicationController
+    def index
+        @users_servers = current_user.user_servers
+        render "api/users_servers/index"
+    end
+
     def create
         @server_id = Server.find_by(url: params[:userServer][:url]).id
         if @server_id
@@ -13,10 +18,16 @@ class Api::UserServersController < ApplicationController
         end
     end
 
+    def destroy
+        @user_server = UserServer.find_by(id: params[:id])
+        @us = @user_server
+        @user_server.destroy
+        render "api/users_servers/destroy"
+    end
     private
 
     def user_server_params
-        params.require(:userServer).permit(:url)
+        params.require(:userServer).permit(:url, :id)
     end
 end
         

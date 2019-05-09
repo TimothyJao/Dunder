@@ -24,6 +24,14 @@ class Api::ServersController < ApplicationController
             render json: @server.errors.full_messages, status: 422
         end
     end
+
+    def destroy
+        @server = Server.find_by(id: params[:id])
+        @s = @server
+        @server.destroy
+
+        render "api/servers/destroy"
+    end
     
     private
 

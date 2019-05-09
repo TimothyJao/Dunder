@@ -14,12 +14,15 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util'
 const App = () => (
     <div className = "app-content">
         <Modal />
-        <ProtectedRoute path="/browse/:server_id" component = {ShowServerContainer} />
-        <ProtectedRoute exact path ="/browse" component = {BrowseFormContainer}/>
-        <AuthRoute exact path ="/guest" component={GuestFormContainer} />
-        <AuthRoute exact path ="/login" component = {LogInFormContainer} />
-        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        <Route exact path="/" component={HomeContainer} />
+        <Switch>
+            <ProtectedRoute exact path="/browse/:server_id" component={ShowServerContainer} />
+            <ProtectedRoute exact path="/browse" component={BrowseFormContainer} />
+            <AuthRoute exact path="/guest" component={GuestFormContainer} />
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <Route exact path="/" component={HomeContainer} />
+        </Switch>
+        
     </div>
 );
 

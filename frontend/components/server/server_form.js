@@ -21,18 +21,19 @@ class ServerForm extends React.Component {
     handleCreateSubmit(e) {
         e.preventDefault();
         const server = Object.assign({}, this.state);
-        this.props.createServer(server).then((server)=>{
+        this.props.createServer(server).then((result) => {
             this.props.closeModal();
-            this.props.history.push(`/browse/${server.currentServer.id}`);
+            this.props.history.push(`/browse/${result.payload.server.id}`);
         });
     }
 
     handleJoinSubmit(e) {
         e.preventDefault();
+        this.state.url = this.state.url.slice(-6);
         const server = Object.assign({}, this.state);
         this.props.createUserServer(server).then((server) => {
             this.props.closeModal();
-            this.props.history.push(`/browse/${server.currentServer.id}`);
+            this.props.history.push(`/browse/${server.userServer.server_id}`);
         });
     }
 
@@ -129,7 +130,7 @@ class ServerForm extends React.Component {
                         <p className="blahblah">server. The invite will look something like this:</p>
                     </div>
                     <form className="create-form" onSubmit={this.handleJoinSubmit}>
-                        <label className="server-name">SERVER NAME <br />
+                        <label className="server-name">SERVER URL <br />
                             <input type="text" value={this.state.url} onChange={this.update('url')} />
                         </label>
                         <br />

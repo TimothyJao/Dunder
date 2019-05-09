@@ -23,7 +23,10 @@
 }
 
 .channel-container{
-    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
     left: 72px;
     width: 240px;
@@ -33,11 +36,12 @@
 
 .main-content{
     display: flex;
-    width: 100%;
+    width: calc(100% - 312px);
     position: absolute;
     left: 312px;
     height: 100%;
     background: white;
+    flex-direction: column;
 }
 
 .home-link:active{
@@ -49,11 +53,16 @@
     left: 5px;
     width: 52px;
     height: 52px;
-    background-color: #7289da;
-    border-radius: 20px;
+    background-color: #2f3035;
+    border-radius: 100px;
     display: flex;
     justify-content: center;
     transition: .1s;
+}
+
+.home-link:hover{
+    background-color: #7289da;
+    border-radius: 20px;
 }
 
 .fa-home:before{
@@ -123,8 +132,8 @@ $size: 4px;
 }
 
 .logoutButton{
-    position: relative;
-    left: 700px;
+    position: fixed;
+    top: 500px;
 }
 
 .button-group{
@@ -175,19 +184,133 @@ $size: 4px;
 .channel-divider{
     background-color: #1f2124;
     height: 2px;
+    width: 240px;
     border-width: 0px;
-    position: relative;
+    top: 48px;
+    position: fixed;
     margin: 0px;
 }
 
 .header-content{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 48px;
+    width: 240px;
+    cursor: pointer;
 }
 
 .header-content span{
+    display: inline-block;
     position: relative;
     left: 15px;
     font-weight: 600;
+}
+
+.header-content i{
+    display: inline-block;
+    position: relative;
+    right: 15px;
+    overflow:hidden;
+    color: #acacae;
+}
+
+.server-dropdown{
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 216px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.server-dropdown div{
+    display: flex;
+    width: 188px;
+    height: 18px;
+    font-size: 15px;
+    padding: 10px 14px;
+}
+
+
+
+.server-dropdown div:hover{
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.invite-div{
+    border-bottom: 1px solid whitesmoke;
+}
+
+.invite-div:hover{
+    p{
+        color: #7289da;
+    }
+
+    i{
+        color: #7289da;
+    }
+}
+
+.invite-div p{
+    color: #8fa0e1;
+}
+
+.invite-div i{
+    color: #8fa0e1;
+}
+
+.delete-div:hover{
+    p{
+        color: red;
+    }
+
+    i{
+        color: red;
+    }
+}
+
+.delete-div p{
+    color: #e14f66;
+}
+
+.delete-div i{
+    color:  #e14f66;
+}
+
+.server-dropdown i{
+    padding-right: 15px;
+}
+
+.delete-div i{
+    padding-right: 18px;
+}
+
+.show{display: flex;}
+
+.content-divider{
+    background-color: #dadada;
+    height: 2px;
+    border-width: 0px;
+    top: 48px;
+    position: fixed;
+    margin: 0px;
+}
+
+.content-header{
+    height: 48px;
+    width: 100%;
+    background-color: red;
+}
+
+.content-second{
+    height: 95px;
+    width: 100%;
+    background-color: black;
 }

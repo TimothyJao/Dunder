@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { clearSessionErrors } from '../../actions/session_actions'
 
 const mapStateToProps = ({ errors }) => {
     return {
@@ -18,7 +19,8 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        processForm: (user) => dispatch(signup(user))
+        processForm: (user) => dispatch(signup(user)),
+        clearSessionErrors: () => dispatch(clearSessionErrors())
     })
 };
 
