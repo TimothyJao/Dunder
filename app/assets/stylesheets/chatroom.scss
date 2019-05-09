@@ -5,3 +5,19 @@
 .hidden-submit{
     display: none;
 }
+
+.message-input{
+    position: fixed;
+    top: 90%;
+    height: 20px;
+    padding: 10px;
+    border: none;
+    background: #f6f6f7;
+    width: 75%;
+    color: #78838f;
+    font-size: 12px;
+}
+
+.message-form ::placeholder{
+    color: #dbdee0;
+}
