@@ -128,6 +128,7 @@ class ServerForm extends React.Component {
                     <div className="create-header">
                         <p className="blahblah"> Enter an Instant Invite below to join an existing</p>
                         <p className="blahblah">server. The invite will look something like this:</p>
+                        <p className="example">https://erised.com/upEpNg</p> 
                     </div>
                     <form className="create-form" onSubmit={this.handleJoinSubmit}>
                         <label className="server-name">SERVER URL <br />

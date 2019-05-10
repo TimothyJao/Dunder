@@ -89,11 +89,12 @@ input{
 
 .submit{
     position: relative;
+    cursor: pointer;
     text-align: center;
     top: 70px;
     height: 25%;
     width: 80%;
-    background: #c9b800;
+    background: #7289da;
     color: white;
     border: 0;
     outline: 0;
@@ -101,7 +102,7 @@ input{
 }
 
 .submit:hover{
-    background: #aa9c00;
+    background: #5f73b8;
 }
 
 .username input{

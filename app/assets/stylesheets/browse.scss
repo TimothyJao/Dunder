@@ -131,12 +131,31 @@ $size: 4px;
     }
 }
 
+.selected-circleThing {
+  background: white;
+  display: inline-block;
+  height: $size * 10;
+  width: $size;
+  border-bottom-right-radius: $size * 2;
+  border-top-right-radius: $size * 2;
+  position: relative;
+  transition: .2s;
+}
+
 .logoutButton{
     position: fixed;
     top: 500px;
 }
 
 .button-group{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    padding: 0 0 10px 0;
+}
+
+.selected-button-group{
     display: flex;
     align-items: center;
     position: relative;
@@ -162,6 +181,25 @@ $size: 4px;
     justify-content: center;
     align-items: center;
     transition: .1s;
+}
+
+.selected-server-link{
+    width: 52px;
+    height: 52px;
+    background-color:  #7289da;
+    border-radius: 18px;
+    position: relative;
+    left: 5px;
+    display: flex;
+    outline: 0;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+}
+
+.selected-server-link p{
+        color: white;
 }
 
 .server-link p{

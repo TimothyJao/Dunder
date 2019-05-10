@@ -18,16 +18,29 @@ class BrowseForm extends React.Component {
         return( 
             <ul className="server-list">
                 {Object.values(this.state.servers).map((server) => {
-                    return(
-                        <div className="button-group" key={server.id}>
-                            <div className="circleThing" />
-                            <li>
-                                <Link className="server-link" to={`/browse/${server.id}`} >
-                                    <span>{server.name[0]}</span>
-                                </Link>
-                            </li>
-                        </div>
-                    )
+                    if (server.id === this.props.serverId){
+                        return (
+                            <div className="button-group" key={server.id}>
+                                <div className="selected-circleThing" />
+                                <li>
+                                    <Link className="selected-server-link" to={`/browse/${server.id}`} >
+                                        <span>{server.name[0]}</span>
+                                    </Link>
+                                </li>
+                            </div>
+                        )
+                    } else{
+                        return(
+                            <div className="button-group" key={server.id}>
+                                <div className="circleThing" />
+                                <li>
+                                    <Link className="server-link" to={`/browse/${server.id}`} >
+                                        <span>{server.name[0]}</span>
+                                    </Link>
+                                </li>
+                            </div>
+                        )
+                    }
                 })}
             </ul>
         )
@@ -168,6 +181,7 @@ class BrowseForm extends React.Component {
 
     render(){
         if (!this.props.servers) return null
+
         return (
             <div className="browseForm">
                 <div className = "side-nav">

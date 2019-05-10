@@ -173,7 +173,7 @@
 }
 
 .create-header{
-    padding: 30px 0;
+    padding-top: 30px;
 }
 
 .BACK{
@@ -231,4 +231,12 @@
 
 .server-join:hover{
     background: #3ca374;
+}
+
+.example{
+    position: relative;
+    top: 8px;
+    color: #7289da;
+    font-size: 24px;
+    text-align: center;
 }
