@@ -39,7 +39,7 @@ A user can also delete a server if they own it and leave a server if they do not
 <br />
 
 ### Live Chat
-
+Live chat 
 
 
 
