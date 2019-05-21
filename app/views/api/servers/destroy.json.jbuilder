@@ -1,0 +1,1 @@
+json.extract! @s, :id, :url, :name, :owner_id

@@ -1,0 +1,1 @@
+json.partial! "api/servers/server", user_server: @user_server, server: @server
