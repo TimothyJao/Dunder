@@ -135,8 +135,6 @@ class BrowseForm extends React.Component {
     }
 
     render(){
-        if (!this.props.servers) return null
-        
         return (
             <div className="browseForm">
                 <div className = "side-nav">

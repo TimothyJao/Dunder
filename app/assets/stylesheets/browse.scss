@@ -9,11 +9,7 @@
 }
 
 .server-container{
-<<<<<<< HEAD
     display: flex;
-=======
-    display: inline-block;
->>>>>>> b78d3b7e2c0211d953ca5e0b8d92a2813fe15dfa
     //position: relative;
     width: 72px;
     height: 100%;
@@ -127,10 +123,7 @@ $size: 4px;
   border-top-right-radius: $size * 2;
   position: relative;
   transition: .2s;
-<<<<<<< HEAD
   top: 15px;
-=======
->>>>>>> b78d3b7e2c0211d953ca5e0b8d92a2813fe15dfa
 }
 
 .button-group:hover{
@@ -148,10 +141,7 @@ $size: 4px;
   border-top-right-radius: $size * 2;
   position: relative;
   transition: .2s;
-<<<<<<< HEAD
   top: 7px;
-=======
->>>>>>> b78d3b7e2c0211d953ca5e0b8d92a2813fe15dfa
 }
 
 .logoutButton{
@@ -159,21 +149,14 @@ $size: 4px;
     top: 500px;
 }
 
-<<<<<<< HEAD
 .button-group {
     display: flex;
     flex-wrap: wrap;
-=======
-.button-group{
-    display: flex;
-    align-items: center;
->>>>>>> b78d3b7e2c0211d953ca5e0b8d92a2813fe15dfa
     position: relative;
     top: 10px;
     padding: 0 0 10px 0;
 }
 
-<<<<<<< HEAD
 .server-holder{
     display: flex;
     align-content: flex-start;
@@ -184,8 +167,6 @@ $size: 4px;
     height: 100%;
 }
 
-=======
->>>>>>> b78d3b7e2c0211d953ca5e0b8d92a2813fe15dfa
 .selected-button-group{
     display: flex;
     align-items: center;
@@ -197,12 +178,9 @@ $size: 4px;
 .server-list{
     padding: 0;
     right: 0;
-<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     justify-content: center;
-=======
->>>>>>> b78d3b7e2c0211d953ca5e0b8d92a2813fe15dfa
 }
 
 .server-link{
