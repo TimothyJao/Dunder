@@ -10,6 +10,8 @@ class Api::ServersController < ApplicationController
         if @server.save
             @user_server = UserServer.new({user_id: current_user.id, server_id: @server.id})
             @user_server.save
+            @channel = Channel.new({server_id: @server.id, name: "general"})
+            @channel.save
             render "api/servers/show"
         else
             render json: @server.errors.full_messages, status: 422

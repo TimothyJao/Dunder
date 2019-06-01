@@ -1,51 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ChatRoom from "../chatroom/chatroom_container"
+import Servers from "../server/server_form_container"
 
 class BrowseForm extends React.Component {
 
     constructor(props){
         super(props);
-        this.listServers = this.listServers.bind(this)
         this.channelHeader = this.channelHeader.bind(this)
         this.findServer = this.findServer.bind(this)
-        this.state = {servers: {}}
+        this.state = {servers: {}, channels: {}}
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.showDropdown = this.showDropdown.bind(this);
     }
  
-    listServers() {
-        return( 
-            <ul className="server-list">
-                {Object.values(this.state.servers).map((server) => {
-                    if (server.id === this.props.serverId){
-                        return (
-                            <div className="button-group" key={server.id}>
-                                <div className="selected-circleThing" />
-                                <li>
-                                    <Link className="selected-server-link" to={`/browse/${server.id}`} >
-                                        <span>{server.name[0]}</span>
-                                    </Link>
-                                </li>
-                            </div>
-                        )
-                    } else{
-                        return(
-                            <div className="button-group" key={server.id}>
-                                <div className="circleThing" />
-                                <li>
-                                    <Link className="server-link" to={`/browse/${server.id}`} >
-                                        <span>{server.name[0]}</span>
-                                    </Link>
-                                </li>
-                            </div>
-                        )
-                    }
-                })}
-            </ul>
-        )
-    }
-
     isHome() {
         if (this.props.serverId){
             return false;
@@ -156,20 +124,7 @@ class BrowseForm extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.props.fetchServers().then(()=>this.setState({servers: this.props.servers}))
-        this.props.fetchUsersServers()
-    }
-
-    componentDidUpdate(prevProps){
-        if (Object.keys(prevProps.servers).length !== Object.keys(this.props.servers).length) {
-            this.setState({servers: this.props.servers})
-        }
-    }
-
-    componentWillUnmount(){
-        
-    }
+    
     
     addChat(){
         if (!this.isHome()){
@@ -181,30 +136,15 @@ class BrowseForm extends React.Component {
 
     render(){
         if (!this.props.servers) return null
-
+        
         return (
             <div className="browseForm">
                 <div className = "side-nav">
                     <div className = "server-container">
-                        <div className="button-group">
-                            <div className="circleThing" />
-                            <Link className="home-link" to="/browse">
-                                <i className="fas fa-home"></i>
-                            </Link>
-                        </div>
-                        <hr className="server-divider" width = "60%" />
-                        {this.listServers()}
-                        <hr className="server-divider" width="60%" />
-                        <div className="button-group">
-                            <div className="circleThing" />
-                            <button className="add-button" onClick={() => this.props.openModal('chooseOption')}>
-                                <i className="fa fa-plus"></i>
-                            </button>
-                        </div>
-                        
+                        < Servers />
                     </div>
                     <div className = "channel-container">
-                        {this.channelHeader()}
+
                         <div className="logoutButton">
                             <button className="header-button" onClick={this.props.logout}>Log Out</button>
                         </div>

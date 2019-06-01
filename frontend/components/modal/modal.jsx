@@ -2,8 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux';
-import ServerFormContainer from '../server/server_form_container';
-import DeleteServerContainer from '../delete_server/delete_server_container'
+import NewServerContainer from '../new_server/server_form_container';
+import DeleteServerContainer from '../remove_server/delete_server_container'
 
 
 function Modal({ modal, closeModal, ownProps }) {
@@ -13,13 +13,13 @@ function Modal({ modal, closeModal, ownProps }) {
     let component;
     switch (modal) {
         case 'chooseOption':
-            component = <ServerFormContainer choice={"option"}/>;
+            component = <NewServerContainer choice={"option"}/>;
             break;
         case 'createServer':
-            component = <ServerFormContainer choice={"create"} />;
+            component = <NewServerContainer choice={"create"} />;
             break;
         case 'joinServer':
-            component = <ServerFormContainer choice={"join"} />;
+            component = <NewServerContainer choice={"join"} />;
             break;
         case 'deleteServer':
             component = <DeleteServerContainer choice={"delete"}/>

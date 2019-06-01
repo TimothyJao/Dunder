@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
         logout: () => dispatch(logout()),
         openModal: modal => dispatch(openModal(modal)),
         fetchServers: () => dispatch(fetchServers()),
-        fetchUsersServers: () => dispatch(fetchUsersServers())
+        fetchUsersServers: () => dispatch(fetchUsersServers()),
     }
 };
 
