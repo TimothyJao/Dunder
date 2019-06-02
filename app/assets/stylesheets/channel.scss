@@ -1,0 +1,95 @@
+.channel-holder{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.channel-list{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    padding: 0;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.channel-group{
+    border-radius: 4px;
+    margin: 1px 8px 1px;
+    padding: 0px 8px;
+    height: 32px;
+    width: 100%;
+    
+}
+
+.channel-link{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.channel-list-header{
+    position: relative;
+    height: 20px;
+    margin: 10px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CHANNELS{
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    color: #72767d;
+}
+
+.channel-list-header .fa-plus:before{
+    color: #72767d;
+    font-size: 16px;
+}
+
+.channel-list-header:hover{
+    .fa-plus:before{
+        color: #b9bbbe;
+        cursor: pointer;
+    }
+}
+
+
+.channel-group:hover{
+    background-color: #1f2124;
+    .fa-trash-alt{
+        display: inline;
+    }
+    .channel-name{
+    color: #b9bbbe;
+    }
+}
+
+.fa-hashtag{
+    color: #72767d;
+    padding: 0px 6px 0px 0px;
+}
+
+.channel-name{
+    position: relative;
+    font-size: 14px;
+    color: #72767d;
+}
+
+.channel-link .fa-trash-alt{
+    display: none;
+    color: #b9bbbe;
+    text-align: right;
+    margin-left: auto;
+}
+
+.fa-trash-alt:hover{
+    color: red;
+}
+

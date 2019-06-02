@@ -14,6 +14,7 @@ const App = () => (
     <div className = "app-content">
         <Modal />
         <Switch>
+            <ProtectedRoute exact path="/browse/:server_id/:channel_id" component={BrowseFormContainer} />
             <ProtectedRoute exact path="/browse/:server_id" component={BrowseFormContainer} />
             <ProtectedRoute exact path="/browse" component={BrowseFormContainer} />
             <AuthRoute exact path="/guest" component={GuestFormContainer} />
