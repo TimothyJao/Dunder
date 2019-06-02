@@ -6,7 +6,7 @@ class channelForm extends React.Component {
         super(props);
         this.channelHeader = this.channelHeader.bind(this)
         this.findServer = this.findServer.bind(this)
-        this.state = { servers: {}, channels: {} }
+        this.state = { channels: {} }
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.showDropdown = this.showDropdown.bind(this);
         this.listChannels = this.listChannels.bind(this);
@@ -163,6 +163,14 @@ class channelForm extends React.Component {
         this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
     }
 
+    componentDidUpdate(prevProps) {
+        if (Object.keys(prevProps.channels).length !== Object.keys(this.props.channels).length) {
+            this.setState({ channels: this.props.channels })
+        }
+        if (prevProps.serverId != this.props.serverId){
+            this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
+        }
+    }
 
     render() {
         return (

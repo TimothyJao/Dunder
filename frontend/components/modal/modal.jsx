@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux';
 import NewServerContainer from '../new_server/server_form_container';
 import DeleteServerContainer from '../remove_server/delete_server_container'
-
+import CreateChannelContainer from '../new_channel/channel_form_container';
 
 function Modal({ modal, closeModal, ownProps }) {
     if (!modal) {
@@ -12,6 +12,9 @@ function Modal({ modal, closeModal, ownProps }) {
     }
     let component;
     switch (modal) {
+        case 'createChannel':
+            component = <CreateChannelContainer/>
+            break;
         case 'chooseOption':
             component = <NewServerContainer choice={"option"}/>;
             break;
@@ -42,7 +45,7 @@ function Modal({ modal, closeModal, ownProps }) {
     );
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         modal: state.ui.modal
     };
@@ -54,4 +57,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));

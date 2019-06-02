@@ -5,7 +5,7 @@ import {fetchServers} from '../../actions/server_actions'
 import { fetchUsersServers } from '../../actions/user_server_actions'
 import BrowseForm from './browse_form.jsx';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         username: state.session.username,
         servers: state.entities.servers,

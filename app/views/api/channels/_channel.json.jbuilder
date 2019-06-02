@@ -1,1 +1,1 @@
-json.channel channel, :id, :name
+json.channel channel, :id, :name, :server_id

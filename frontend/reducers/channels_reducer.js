@@ -4,9 +4,9 @@ const channelsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_CHANNELS:
-            return Object.assign({}, state, action.channels);
+            return action.channels;
         case RECEIVE_CURRENT_CHANNEL:
-            return Object.assign({}, state, { [action.currentServer.id]: action.currentServer });
+            return Object.assign({}, state, {[action.currentChannel.channel.id]: action.currentChannel.channel});
         case DELETE_CHANNEL:
             var newState = Object.assign({}, state);
             delete (newState[action.channel.id])
