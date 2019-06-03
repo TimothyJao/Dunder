@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
     def show
         @user = User.find_by(username: params[:username])
         render "api/users/show"
+    end
     private
 
     def user_params

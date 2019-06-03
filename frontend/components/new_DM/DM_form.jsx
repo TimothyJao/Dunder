@@ -1,14 +1,14 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
-class ChannelForm extends React.Component {
+class DMForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            server_id: props.serverId,
+            sender: props.sender_id,
+            recipient: "",
         };
-        this.createChannel = this.createChannel.bind(this);
+        this.createDM = this.createDM.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.handleCreateSubmit = this.handleCreateSubmit.bind(this)
     }
@@ -19,10 +19,9 @@ class ChannelForm extends React.Component {
 
     handleCreateSubmit(e) {
         e.preventDefault();
-        const channel = Object.assign({}, this.state);
-        this.props.createChannel(channel).then((data) => {
+        this.props.createDM(this.state.sender, this.state.recipient).then((data) => {
             this.props.closeModal();
-            this.props.history.push(`/browse/${this.props.serverId}/${data.currentChannel.channel.id}`);
+            this.props.history.push(`/browse/DMs/${data.currentChannel.channel.id}`);
         });
     }
 
@@ -50,22 +49,22 @@ class ChannelForm extends React.Component {
         }
     }
 
-    createChannel(){
+    createDM(){
         return(
             <div className="server-box">
                 <div className="create-top">
-                    <p className="CYS"> CREATE A CHANNEL</p>
+                    <p className="CYS"> SEND A DIRECT MESSAGE</p>
                     <div className="welcome">
                         {this.props.welcomeMessage}
                         {this.renderErrors()}
                     </div>
                     <div className="create-header">
-                        <p className="blahblah"> Create a channel in this server to talk</p>
-                        <p className="blahblah">to your friends about any topic you want.</p>
+                        <p className="blahblah"> Send a direct message to another user. No one else</p>
+                        <p className="blahblah"> can see this message except for you and the recipient.</p>
                     </div>
                     <form className="create-form" onSubmit={this.handleCreateSubmit}>
-                        <label className="server-name">CHANNEL NAME <br />
-                            <input type="text" value={this.state.name} onChange={this.update('name')} />
+                        <label className="server-name">RECIPIENT NAME <br />
+                            <input type="text" value={this.state.recipient} onChange={this.update('recipient')} />
                         </label>
                         <br />
                         <input className="server-submit" type="submit" value={"Create Channel"} />
@@ -84,10 +83,10 @@ class ChannelForm extends React.Component {
     render() {
         return (
             <>
-                {this.createChannel()}
+                {this.createDM()}
             </>
         )
     }
 }
 
-export default ChannelForm;
+export default DMForm;

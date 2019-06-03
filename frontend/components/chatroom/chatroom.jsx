@@ -52,8 +52,7 @@ class ChatRoom extends React.Component {
             this.messageList = [];
             this.setState({messages:[]})
             this.props.fetchMessages(this.props.parentId).then((messages) => {
-            this.setState({ 
-            debuggermessages:messages.messages })})
+            this.setState({messages:messages.messages })})
             App.cable.subscriptions.remove(this.server);
             this.createSocket();
         }

@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/channel_api_util';
-import { createServer } from 'http2';
 
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS"
 export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS"

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom'
 import { createDM} from '../../actions/channel_actions';
 // import { createUserServer } from '../../actions/user_server_actions'
-import ServerForm from './channel_form';
+import DMForm from './DM_form';
 import { closeModal, openModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,9 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        createDM: (sender_id, recipient_id) => dispatch(createDM(sender_id, recipient_id)),
+        createDM: (sender_id, recipient_username) => dispatch(createDM(sender_id, recipient_username)),
         closeModal: () => dispatch(closeModal()),
     })
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServerForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DMForm));

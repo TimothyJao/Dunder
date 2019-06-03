@@ -15,6 +15,7 @@ const App = () => (
         <Modal />
         <Switch>
             <ProtectedRoute exact path="/browse/:server_id/:channel_id" component={BrowseFormContainer} />
+            <ProtectedRoute exact path="/browse/DMs/:channel_id" component={BrowseFormContainer} />
             <ProtectedRoute exact path="/browse/:server_id" component={BrowseFormContainer} />
             <ProtectedRoute exact path="/browse" component={BrowseFormContainer} />
             <AuthRoute exact path="/guest" component={GuestFormContainer} />

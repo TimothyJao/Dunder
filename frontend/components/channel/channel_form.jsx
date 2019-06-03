@@ -127,7 +127,7 @@ class channelForm extends React.Component {
             return (
                 <div className="channel-list-header">
                 <span className="CHANNELS">DIRECT MESSAGES</span>
-                <i className="fa fa-plus" onClick={() => this.props.openModal('createChannel')}></i>
+                <i className="fa fa-plus" onClick={() => this.props.openModal('createDM')}></i>
                 </div>
             )
         } else{
