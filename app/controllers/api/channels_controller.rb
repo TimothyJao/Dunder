@@ -5,6 +5,17 @@ class Api::ChannelsController < ApplicationController
         render "api/channels/index"
     end
     
+    def fetch_dms
+        @channels_sender = Channel.find_by(sender_id: params[:sender_id])
+        @channels_recipient = Channel.find_by(recipient_id: params[:recipient_id])
+        debugger
+        render "api/channels/index"
+    end
+
+    def fetch_recipient_dms
+        render "api/channels/index"
+    end
+
     def create
         @channel = Channel.new(channel_params)
         if @channel.save

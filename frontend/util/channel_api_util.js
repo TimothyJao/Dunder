@@ -6,6 +6,25 @@ export const createChannel = (channel) => (
     })
 )
 
+export const fetchDMs = (id) => {
+    return(
+        $.ajax({
+            method: "GET",
+            url: `api/dms/${id}`
+        })
+    )
+}
+
+export const fetchUser = (username) => {
+    return(
+        $.ajax({
+            method: "GET",
+            url: `api/user/${id}`,
+            data: {username}
+        })
+    )
+}
+
 export const fetchChannel = (id) => {
     return (
         $.ajax({

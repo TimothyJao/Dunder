@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     resources :user_servers, only: [:create, :destroy, :index]
     resources :messages, only: [:index]
     resources :channels, only: [:create, :show, :index, :destroy]
-    get "dm-sender/:id", to: "channels#fetch_sender_dms"
-    get "dm-recipient/:id", to: "channels#fetch_recipient_dms"
+    get "dms/:id", to: "channels#fetch_dms"
   end
 
   root to: 'static_pages#root'
