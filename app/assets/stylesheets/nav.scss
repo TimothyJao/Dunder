@@ -83,7 +83,6 @@ a:hover {
 
 .header-button{
     position: relative;
-    top: 10px;
     color: white;
     padding: 8px;
     height: 40px;
@@ -95,6 +94,7 @@ a:hover {
     background: transparent;
     text-decoration: none;
     transition: 1s;
+    margin-right: 70px;
 }
 
 .header-button:active, .header-button:focus {

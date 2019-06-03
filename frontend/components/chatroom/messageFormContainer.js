@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        parentId: ownProps.match.params.server_id,
+        parentId: parseInt(ownProps.match.params.channel_id),
         senderId: state.session.id
     };
 };

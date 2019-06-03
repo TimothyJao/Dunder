@@ -146,7 +146,6 @@ $size: 4px;
 
 .logoutButton{
     position: fixed;
-    top: 500px;
 }
 
 .button-group {
@@ -360,6 +359,9 @@ $size: 4px;
     height: 48px;
     width: 100%;
     background-color: #7289da;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .content-second{

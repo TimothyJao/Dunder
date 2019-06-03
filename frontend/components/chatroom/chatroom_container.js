@@ -5,7 +5,7 @@ import { fetchMessages } from '../../actions/chat_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        parentId: ownProps.match.params.server_id,
+        parentId: parseInt(ownProps.match.params.channel_id),
         sender_id: state.session.id,
         messages: state.entities.messages
     };

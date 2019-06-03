@@ -24,9 +24,9 @@ class Api::ChannelsController < ApplicationController
     end
 
     def destroy
-        @server = Server.find_by(id: params[:id])
-        @s = @server
-        @server.destroy
+        @channel = Channel.find_by(id: params[:id])
+        @c = @channel
+        @channel.destroy
 
         render "api/channels/destroy"
     end

@@ -54,21 +54,21 @@ class ChannelForm extends React.Component {
         return(
             <div className="server-box">
                 <div className="create-top">
-                    <p className="CYS"> CREATE YOUR SERVER</p>
+                    <p className="CYS"> CREATE A CHANNEL</p>
                     <div className="welcome">
                         {this.props.welcomeMessage}
                         {this.renderErrors()}
                     </div>
                     <div className="create-header">
-                        <p className="blahblah"> By creating a server, you will have access to free voice</p>
-                        <p className="blahblah">and text chat to use amongst your friends.</p>
+                        <p className="blahblah"> Create a channel in this server to talk</p>
+                        <p className="blahblah">to your friends about any topic you want.</p>
                     </div>
                     <form className="create-form" onSubmit={this.handleCreateSubmit}>
-                        <label className="server-name">SERVER NAME <br />
+                        <label className="server-name">CHANNEL NAME <br />
                             <input type="text" value={this.state.name} onChange={this.update('name')} />
                         </label>
                         <br />
-                        <input className="server-submit" type="submit" value={"Create Server"} />
+                        <input className="server-submit" type="submit" value={"Create Channel"} />
                     </form>
                     <div className="BACK" onClick={()=>this.props.openModal('chooseOption')}>
                         <i className="fas fa-long-arrow-alt-left"></i>

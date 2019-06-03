@@ -1,12 +1,12 @@
 class ChatChannel < ApplicationCable::Channel  
 
   def subscribed
-    parent = Server.find(params[:parent_id])
+    parent = Channel.find(params[:parent_id])
     stream_for parent
   end
 
   def speak(data)
-    parent = Server.find(params[:parent_id])
+    parent = Channel.find(params[:parent_id])
     message = Message.new(
       message: data['message'], 
       sender_id: data['sender_id'],
@@ -20,7 +20,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def load
-    parent = Server.find(params[:parent_id])
+    parent = Channel.find(params[:parent_id])
     messages = Message.where(parent_id: parent.id)
     socket = { messages:messages, type:'messages' }
     ChatChannel.broadcast_to(parent, socket)

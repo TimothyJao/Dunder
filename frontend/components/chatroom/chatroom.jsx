@@ -51,7 +51,9 @@ class ChatRoom extends React.Component {
         if (prevProps.parentId != this.props.parentId) {
             this.messageList = [];
             this.setState({messages:[]})
-            this.props.fetchMessages(this.props.parentId)
+            this.props.fetchMessages(this.props.parentId).then((messages) => {
+            this.setState({ 
+            debuggermessages:messages.messages })})
             App.cable.subscriptions.remove(this.server);
             this.createSocket();
         }
@@ -81,7 +83,7 @@ class ChatRoom extends React.Component {
         let oldMessageList = [];
 
         if (Object.values(this.props.messages).length != 0){
-            oldMessageList = this.props.messages.map(data =>{
+            oldMessageList = this.props.messages.map(data => {
                 return (
                     <li key={data.message.id} className="chat-message">
                         <hr className="message-divider" width="100%"></hr>
@@ -93,7 +95,7 @@ class ChatRoom extends React.Component {
             })
         }
 
-        this.messageList = oldMessageList.concat(this.messageList, [<br/>]);
+        this.messageList = oldMessageList.concat(this.messageList);
 
         return(
             <div className="chatroom-container">               

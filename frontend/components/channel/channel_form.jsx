@@ -93,7 +93,7 @@ class channelForm extends React.Component {
 
             let secondSelection;
 
-            if (this.props.current_user[0].id === this.findServer().owner_id) {
+            if (this.props.currentUser[0].id === this.findServer().owner_id) {
                 secondSelection = <div className="delete-div" onClick={() => this.deleteSelection()}>
                     <i className="fas fa-trash-alt"></i>
                     <p>Delete Server</p>
@@ -123,43 +123,58 @@ class channelForm extends React.Component {
     }
 
     listChannels() {
-        return (
-            <>
+        if (this.isHome()) {
+            return (
                 <div className="channel-list-header">
-                    <span className="CHANNELS">CHANNELS</span>
-                    <i className="fa fa-plus" onClick={() => this.props.openModal('createChannel')}></i>
+                <span className="CHANNELS">DIRECT MESSAGES</span>
+                <i className="fa fa-plus" onClick={() => this.props.openModal('createChannel')}></i>
                 </div>
-                <ul className="channel-list">
-                    {Object.values(this.state.channels).map((channel) => {
-                        // if (channel.id === this.props.serverId) {
-                        //     return (
-                        //         <div className="button-group" key={server.id}>
-                        //             <div className="selected-circleThing" />
-                        //             <li>
-                        //                 <Link className="selected-server-link" to={`/browse/${server.id}`} >
-                        //                     <span>{server.name[0]}</span>
-                        //                 </Link>
-                        //             </li>
-                        //         </div>
-                        //     )
-                        // } else {
-                            return (
-                                <li className="channel-group" key={channel.id}>
-                                    <Link className="channel-link" to={`/browse/${this.props.serverId}/${channel.id}`} >
-                                        <i className="fas fa-hashtag"></i>
-                                        <span className="channel-name">{channel.name}</span>
-                                        <i className="fas fa-trash-alt" onClick={()=>Window.alert("test")}></i>
-                                    </Link>
-                                </li>
-                            )
-                        }
-                    )}
-                </ul>
-            </>
-        )
+            )
+        } else{
+            let ownerAdd = <></>;
+            let ownerTrash = <></>;
+            if (this.props.currentUser[0].id === this.findServer().owner_id){
+                ownerAdd = <i className="fa fa-plus" onClick={() => this.props.openModal('createChannel')}></i>;
+                ownerTrash = <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>;
+            }
+            return (
+                <>
+                    <div className="channel-list-header">
+                        <span className="CHANNELS">CHANNELS</span>
+                        {ownerAdd}
+                    </div>
+                    <ul className="channel-list">
+                        {Object.values(this.state.channels).map((channel) => {
+                            if (channel.id === this.props.channelId) {
+                                return (
+                                    <li className="channel-group-selected" key={channel.id}>
+                                        <Link className="channel-link-selected" to={`/browse/${this.props.serverId}/${channel.id}`} >
+                                            <i className="fas fa-hashtag"></i>
+                                            <span className="channel-name-selected">{channel.name}</span>
+                                            {ownerTrash}
+                                        </Link>
+                                    </li>
+                                )
+                            } else {
+                                return (
+                                    <li className="channel-group" key={channel.id}>
+                                        <Link className="channel-link" to={`/browse/${this.props.serverId}/${channel.id}`} >
+                                            <i className="fas fa-hashtag"></i>
+                                            <span className="channel-name">{channel.name}</span>
+                                            {ownerTrash}
+                                        </Link>
+                                    </li>
+                                )
+                            }
+                        })}
+                    </ul>
+                </>
+            )
+        }
     }
 
     componentDidMount() {
+        if (this.isHome()) return null;
         this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
     }
 
@@ -168,6 +183,7 @@ class channelForm extends React.Component {
             this.setState({ channels: this.props.channels })
         }
         if (prevProps.serverId != this.props.serverId){
+            if (this.isHome()) return null;
             this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
         }
     }

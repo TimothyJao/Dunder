@@ -8,6 +8,13 @@ class ServerForm extends React.Component {
         this.state = { servers: {}}
     }
 
+    isHome() {
+        if (this.props.serverId) {
+            return false;
+        }
+        return true;
+    }
+
     listServers() {
         return (
             <ul className="server-list">
@@ -42,7 +49,7 @@ class ServerForm extends React.Component {
     
     componentDidMount() {
         this.props.fetchServers().then(() => this.setState({ servers: this.props.servers }))
-        this.props.fetchUsersServers()
+        if(!this.isHome()) this.props.fetchUsersServers()
     }
 
     componentDidUpdate(prevProps) {

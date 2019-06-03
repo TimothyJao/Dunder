@@ -32,6 +32,13 @@
     align-items: center; 
 }
 
+.channel-link-selected{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
 .channel-list-header{
     position: relative;
     height: 20px;
@@ -71,6 +78,18 @@
     }
 }
 
+.channel-group-selected{
+    background-color: #40444b;
+    border-radius: 4px;
+    margin: 1px 8px 1px;
+    padding: 0px 8px;
+    height: 32px;
+    width: 100%;
+    .fa-trash-alt{
+        display: inline;
+    }
+}
+
 .fa-hashtag{
     color: #72767d;
     padding: 0px 6px 0px 0px;
@@ -82,11 +101,21 @@
     color: #72767d;
 }
 
-.channel-link .fa-trash-alt{
-    display: none;
+.channel-name-selected{
+    position: relative;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.channel-link .fa-trash-alt,
+.channel-link-selected .fa-trash-alt{
     color: #b9bbbe;
     text-align: right;
     margin-left: auto;
+}
+
+.channel-link .fa-trash-alt{
+    display: none;
 }
 
 .fa-trash-alt:hover{

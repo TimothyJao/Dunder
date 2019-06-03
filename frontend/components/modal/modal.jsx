@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import NewServerContainer from '../new_server/server_form_container';
 import DeleteServerContainer from '../remove_server/delete_server_container'
 import CreateChannelContainer from '../new_channel/channel_form_container';
+import DeleteChannelContainer from '../delete_channel/delete_channel_container'
 
 function Modal({ modal, closeModal, ownProps }) {
     if (!modal) {
@@ -12,6 +13,9 @@ function Modal({ modal, closeModal, ownProps }) {
     }
     let component;
     switch (modal) {
+        case 'deleteChannel':
+            component = <DeleteChannelContainer/>
+            break;
         case 'createChannel':
             component = <CreateChannelContainer/>
             break;

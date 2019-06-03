@@ -3,6 +3,7 @@ class Server < ApplicationRecord
     validates :owner_id, :name, :url, presence: true
 
     has_many :user_server,
+    dependent: :destroy,
     foreign_key: :server_id,
     class_name: :UserServer
 
@@ -11,6 +12,7 @@ class Server < ApplicationRecord
     source: :user
   
     has_many :channels,
+    dependent: :destroy,
     foreign_key: :server_id,
     class_name: :Channel
 

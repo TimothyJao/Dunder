@@ -47,9 +47,9 @@ export const createServer = server => dispatch => {
     )
 }
 
-export const fetchServer = server => dispatch => {
+export const fetchServer = server_id => dispatch => {
     return(
-        APIUtil.fetchServer(parseInt(server.id)).then(
+        APIUtil.fetchServer(parseInt(server_id)).then(
             server => (dispatch(receiveCurrentServer(server))),
             err => (dispatch(receiveErrors(err.responseJSON)))
         )

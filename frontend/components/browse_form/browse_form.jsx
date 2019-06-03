@@ -9,20 +9,21 @@ class BrowseForm extends React.Component {
     constructor(props){
         super(props);
     }
- 
-    
 
+    isHome() {
+        if (this.props.channelId) {
+            return false;
+        }
+        return true;
+    }
     
-
-    
-    
-    // addChat(){
-    //     if (!this.isHome()){
-    //         return(
-    //             < ChatRoom />
-    //         )
-    //     }
-    // }
+    addChat(){
+        if (!this.isHome()){
+            return(
+                < ChatRoom />
+            )
+        }
+    }
 
     render(){
         return (
@@ -33,16 +34,18 @@ class BrowseForm extends React.Component {
                     </div>
                     <div className = "channel-container">
                         < Channels />
-                        <div className="logoutButton">
-                            <button className="header-button" onClick={this.props.logout}>Log Out</button>
-                        </div>
+                        
                         <hr className="channel-divider" />
                     </div>
                 </div>
                 <div className = "main-content">
-                    <div className="content-header"> </div>
+                    <div className="content-header"> 
+                        <div className="logoutButton">
+                            <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                        </div>
+                    </div>
                     <hr className="content-divider" width="100%" />
-                    {/* {this.addChat()} */}
+                    {this.addChat()}
                 </div>
                 
             </div>

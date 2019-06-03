@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         username: state.session.username,
         servers: state.entities.servers,
+        channelId: ownProps.match.params.channel_id
     };
 };
 
