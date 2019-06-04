@@ -1,0 +1,224 @@
+/* All styling for the channel-holder div goes here */
+
+/* Divider between header and list of channels */
+.channel-divider{
+    background-color: #1f2124;
+    height: 2px;
+    width: 240px;
+    border-width: 0px;
+    top: 48px;
+    position: fixed;
+    margin: 0px;
+}
+
+/* Styling for the header of the channel section */
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    width: 240px;
+    cursor: pointer;
+}
+
+.header-content span{
+    display: inline-block;
+    position: relative;
+    left: 15px;
+    font-weight: 600;
+}
+
+.header-content i{
+    display: inline-block;
+    position: relative;
+    right: 15px;
+    overflow:hidden;
+    color: #acacae;
+}
+
+/* Styling for dropdown menu to delete/leave/invite */
+
+.server-dropdown{
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 216px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.server-dropdown div{
+    display: flex;
+    width: 188px;
+    height: 18px;
+    font-size: 15px;
+    padding: 10px 14px;
+}
+
+.server-dropdown div:hover{
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.server-dropdown i{
+    padding-right: 15px;
+}
+
+.invite-div{
+    border-bottom: 1px solid whitesmoke;
+}
+
+.invite-div:hover{
+    p, i{
+        color: #7289da;
+    }
+}
+
+.invite-div p{
+    color: #8fa0e1;
+}
+
+.invite-div i{
+    color: #8fa0e1;
+}
+
+.delete-div:hover{
+    p, i{
+        color: red;
+    }
+}
+
+.delete-div p{
+    color: #e14f66;
+}
+
+.delete-div i{
+    color:  #e14f66;
+    padding-right: 18px;
+}
+
+.show{display: flex;}
+
+/* Styling for the header of the channel list */
+.channel-list-header{
+    position: relative;
+    height: 20px;
+    margin: 10px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.channel-list-header:hover{
+    .fa-plus:before{
+        color: #b9bbbe;
+        cursor: pointer;
+    }
+}
+
+.channel-list-header .fa-plus:before{
+    color: #72767d;
+    font-size: 16px;
+}
+
+.CHANNELS{
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    color: #72767d;
+}
+
+/*Styling for the channel list and each element*/
+.channel-list{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    padding: 0;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.channel-group{
+    border-radius: 4px;
+    margin: 1px 8px 1px;
+    padding: 0px 8px;
+    height: 32px;
+    width: 100%;    
+}
+
+.channel-group-selected{
+    background-color: #40444b;
+    border-radius: 4px;
+    margin: 1px 8px 1px;
+    padding: 0px 8px;
+    height: 32px;
+    width: 100%;
+    .fa-trash-alt{
+        display: inline;
+    }
+}
+
+.channel-group:hover{
+    background-color: #1f2124;
+    .fa-trash-alt{
+        display: inline;
+    }
+    .channel-name{
+    color: #b9bbbe;
+    }
+}
+
+.channel-link{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.channel-link-selected{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.fa-hashtag{
+    color: #72767d;
+    padding: 0px 6px 0px 0px;
+}
+
+.channel-name{
+    position: relative;
+    font-size: 14px;
+    color: #72767d;
+}
+
+.channel-name-selected{
+    position: relative;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.channel-link .fa-trash-alt,
+.channel-link-selected .fa-trash-alt{
+    color: #b9bbbe;
+    text-align: right;
+    margin-left: auto;
+}
+
+.channel-link .fa-trash-alt{
+    display: none;
+}
+
+.fa-trash-alt:hover{
+    color: red;
+}
+
+
