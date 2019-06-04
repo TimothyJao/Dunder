@@ -14,12 +14,10 @@
  */
 
 @import "_reset.scss";
+@import "splash-page.scss";
 @import "server-holder.scss";
 @import "channel-holder.scss";
 @import "main-content.scss";
-@import "nav.scss";
-@import "header.scss";
-@import "content.scss";
 @import "app.scss";
 @import "section.scss";
 @import "browse.scss";
@@ -27,5 +25,4 @@
 @import "server.scss";
 @import "delete_form.scss";
 @import "chatroom.scss";
-@import "channel.scss";
 

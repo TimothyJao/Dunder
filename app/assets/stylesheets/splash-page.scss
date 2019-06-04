@@ -1,0 +1,196 @@
+/*Styling for splash page*/
+
+/*Background color*/
+body{
+    background: #26262B;
+}
+
+/* Styling for the navbar */
+
+nav{
+    position: relative;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    text-decoration: none;
+    color: white;
+    justify-content: space-around;
+    margin-top: auto;
+}
+.right-nav,
+.main-nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+.right-nav{
+    width: 250px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.right-nav p{
+    position: relative;
+    bottom: 30%;
+}
+
+.right-nav .nav-button{
+    font-size: 12px;
+    position: relative;
+    margin: 5px;
+    padding: 4px;
+    height: 20px;
+    width: 56px;
+    color: #b1b1b2;
+    border: 2px solid #b1b1b2;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.nav-button:hover{
+    border: 2px solid white;
+    color: white;
+}
+
+.main-nav {
+    color: #7c7c7c;
+    transition: 1s;
+    position: relative;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+
+.header-link {
+    font-size: 30px;
+    position: relative;
+    transition: .5s;
+}
+
+.header-link:hover {
+    color: #7289da;
+}
+
+/* Styling for description of website */
+
+.header-button{
+    position: relative;
+    color: white;
+    padding: 8px;
+    height: 40px;
+    width: 90px;
+    border: 1px solid #828282 !important;
+    border-radius: 20px;
+    vertical-align: middle;
+    text-align: center;
+    background: transparent;
+    text-decoration: none;
+    transition: 1s;
+    margin-right: 70px;
+}
+
+.header-button:active, .header-button:focus {
+  outline: 0;
+  border: none;
+  outline-style: none;
+}
+
+header{
+    position: relative;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header-text{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.big{
+    font-weight: 800;
+    transform: scale(1.05, 1.1);
+    text-align: center;
+    font-size: 32px;
+    position: absolute;
+}
+
+.small{
+    width: 780px;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    top: 52px;
+    line-height: 24px;
+}
+
+.redirect-button{
+    width: 200px;
+    font-weight: 600;
+    height: 40px;
+    border-radius: 3px;
+    position: relative;
+    display: block;
+    margin: 0 40px;
+    top: 125px;
+    border: 0px;
+    outline: 0px;
+    background: #7289da;
+    color: #e0e0e0;
+    transition: .3s;
+}
+
+.redirect-button:hover{
+    color: #ffffff;
+    background: #5e77d4;
+}
+
+.redirect-button:active{
+    top: 128px;
+}
+
+/* Styling for splash page background */
+
+.main-img{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 230px;
+    background-size:100% auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Styling for link container */
+.links-container{
+    position: relative;
+    top: 225px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 300px;
+    height: 100px;
+    font-size: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top{
+    position: relative;
+    top: 225px;
+}
+
+.bottom{
+    position: relative;
+    top: 225px;
+}
