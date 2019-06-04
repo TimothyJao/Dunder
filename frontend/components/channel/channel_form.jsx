@@ -125,10 +125,37 @@ class channelForm extends React.Component {
     listChannels() {
         if (this.isHome()) {
             return (
-                <div className="channel-list-header">
-                <span className="CHANNELS">DIRECT MESSAGES</span>
-                <i className="fa fa-plus" onClick={() => this.props.openModal('createDM')}></i>
-                </div>
+                <>
+                    <div className="channel-list-header">
+                        <span className="CHANNELS">DIRECT MESSAGES</span>
+                        <i className="fa fa-plus" onClick={() => this.props.openModal('createDM')}></i>
+                    </div>
+                    <ul className="channel-list">
+                        {Object.values(this.state.channels).map((channel) => {
+                            if (channel.id === this.props.channelId) {
+                                return (
+                                    <li className="channel-group-selected" key={channel.id}>
+                                        <Link className="channel-link-selected" to={`/browse/DMs/${channel.id}`} >
+                                            <i className="fas fa-hashtag"></i>
+                                            <span className="channel-name-selected">{channel.name}</span>
+                                            <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>
+                                        </Link>
+                                    </li>
+                                )
+                            } else {
+                                return (
+                                    <li className="channel-group" key={channel.id}>
+                                        <Link className="channel-link" to={`/browse/DMs/${channel.id}`} >
+                                            <i className="fas fa-hashtag"></i>
+                                            <span className="channel-name">{channel.name}</span>
+                                            <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>
+                                        </Link>
+                                    </li>
+                                )
+                            }
+                        })}
+                    </ul>
+                </>
             )
         } else{
             let ownerAdd = <></>;
@@ -174,17 +201,35 @@ class channelForm extends React.Component {
     }
 
     componentDidMount() {
-        if (this.isHome()) return null;
-        this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
+        if (this.isHome()) {
+            
+            this.props.fetchDMs(this.props.currentUser[0].id).then((DMs) => this.setState({ channels: DMs.channels }))
+        } else{
+            this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
+        }
     }
 
     componentDidUpdate(prevProps) {
+        let prev_server;
+        let current_server;
+        if (isNaN(prevProps.serverId)){
+            prev_server = -1;
+        } else{
+            prev_server = prevProps.serverId;
+        }
+        if (isNaN(this.props.serverId)) {
+            current_server = -1;
+        } else {
+            current_server = prevProps.serverId;
+        }
         if (Object.keys(prevProps.channels).length !== Object.keys(this.props.channels).length) {
             this.setState({ channels: this.props.channels })
-        }
-        if (prevProps.serverId != this.props.serverId){
-            if (this.isHome()) return null;
-            this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
+        }else if (prev_server != current_server){
+            if (this.isHome()){
+                this.props.fetchDMs(this.props.currentUser[0].id).then((DMs) => { this.setState({ channels: DMs.channels})})
+            } else {
+                this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
+            }
         }
     }
 

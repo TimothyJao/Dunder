@@ -69,10 +69,6 @@ class DMForm extends React.Component {
                         <br />
                         <input className="server-submit" type="submit" value={"Create Channel"} />
                     </form>
-                    <div className="BACK" onClick={()=>this.props.openModal('chooseOption')}>
-                        <i className="fas fa-long-arrow-alt-left"></i>
-                        <p>BACK</p>
-                    </div>
                         
                 </div>
             </div>
