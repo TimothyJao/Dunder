@@ -1,0 +1,183 @@
+/* All styling for the server-holder div goes here */
+
+/* Constants */
+$size: 4px;
+
+/* div styling for each server selection */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 10px;
+    padding: 0 0 10px 0;
+}
+
+.selected-button-group{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    padding: 0 0 10px 0;
+}
+
+.button-group:hover{
+    .circleThing{
+        height: $size * 5;
+    }
+}
+
+/* Styling for dividers between home/servers/new servers */
+.server-divider{
+    position: relative;
+    height: 2px;
+    background-color:  #2f3035;
+    border-width: 0px;
+    margin: 8px 14.406px 0px;
+}
+
+/* Fancy half circle that appears when server is hovered or selected */
+
+.circleThing {
+  background: #9e978e;
+  display: inline-block;
+  height: $size * 0;
+  width: $size;
+  border-bottom-right-radius: $size * 2;
+  border-top-right-radius: $size * 2;
+  position: relative;
+  transition: .2s;
+  top: 15px;
+}
+
+.selected-circleThing {
+  background: white;
+  display: inline-block;
+  height: $size * 10;
+  width: $size;
+  border-bottom-right-radius: $size * 2;
+  border-top-right-radius: $size * 2;
+  position: relative;
+  transition: .2s;
+  top: 6px;
+}
+
+/* Styling for home button */
+.home-link{
+    position: relative;
+    left: 5px;
+    width: 52px;
+    height: 52px;
+    background-color: #2f3035;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    transition: .1s;
+}
+
+.home-link:hover{
+    background-color: #7289da;
+    border-radius: 20px;
+}
+
+.home-link:active{
+    top: 2px;
+}
+
+.fa-home:before{
+    font-size: 28px;
+    position: relative;
+    top: 12px;
+}
+
+/* Styling for add button */
+.add-button{
+    width: 52px;
+    height: 52px;
+    background-color: #2f3035;
+    border-radius: 30px;
+    position: relative;
+    left: 5px;
+    display: flex;
+    outline: 0;
+    border: 0;
+    justify-content: center;
+    transition: .1s;
+}
+
+.add-button:hover {
+    border-radius: 20px;
+    background-color: #43b581;
+    .fa-plus:before{
+        color: white;
+    }
+}
+
+.add-button:active{
+    top: 2px;
+}
+
+.fa-plus:before{
+    font-size: 28px;
+    position: relative;
+    color: #43b582;
+}
+
+/* Styling for server list and subsequent servers */
+.server-list{
+    padding: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.server-link{
+    width: 52px;
+    height: 52px;
+    background-color: #2f3035;
+    border-radius: 30px;
+    position: relative;
+    left: 5px;
+    display: flex;
+    outline: 0;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+}
+
+.selected-server-link{
+    width: 52px;
+    height: 52px;
+    background-color:  #7289da;
+    border-radius: 18px;
+    position: relative;
+    left: 5px;
+    display: flex;
+    outline: 0;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+}
+
+.server-link:active{
+    top: 2px;
+}
+
+.server-link:hover {
+    border-radius: 20px;
+    background-color: #7289da;
+    p{
+        color: white;
+    }
+}
+
+.selected-server-link p{
+        color: white;
+}
+
+.server-link p{
+    color: #b9bbbe;
+    font-weight: 600;
+}

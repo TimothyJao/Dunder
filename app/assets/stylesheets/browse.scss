@@ -1,16 +1,8 @@
 .browseForm{
     display: flex;
 }
-.side-nav{
-    display: flex;
-    position: absolute;
-    width: 312px;
-    height: 100%;
-}
 
 .server-container{
-    display: flex;
-    //position: relative;
     width: 72px;
     height: 100%;
     position: fixed;
@@ -18,8 +10,25 @@
     background-color: #1f2124;
 }
 
+.server-holder{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0 0 10px 0;    
+    width: 100%;
+    height: 100%;
+}
+
 .server-container::-webkit-scrollbar{
     display: none;
+}
+
+.side-nav{
+    display: flex;
+    position: absolute;
+    width: 312px;
+    height: 100%;
 }
 
 .channel-container{
@@ -44,193 +53,8 @@
     flex-direction: column;
 }
 
-.home-link:active{
-    top: 2px;
-}
-
-.home-link{
-    position: relative;
-    left: 5px;
-    width: 52px;
-    height: 52px;
-    background-color: #2f3035;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    transition: .1s;
-}
-
-.home-link:hover{
-    background-color: #7289da;
-    border-radius: 20px;
-}
-
-.fa-home:before{
-    font-size: 28px;
-    position: relative;
-    top: 12px;
-}
-
-.server-divider{
-    position: relative;
-    height: 2px;
-    background-color:  #2f3035;
-    border-width: 0px;
-    margin: 8px 14.406px 0px;
-}
-
-.add-button{
-    width: 52px;
-    height: 52px;
-    background-color: #2f3035;
-    border-radius: 30px;
-    position: relative;
-    left: 5px;
-    display: flex;
-    outline: 0;
-    border: 0;
-    justify-content: center;
-    transition: .1s;
-}
-
-.add-button:active{
-    top: 2px;
-}
-
-
-.add-button:hover {
-    border-radius: 20px;
-    background-color: #43b581;
-    .fa-plus:before{
-        color: white;
-    }
-}
-
-.fa-plus:before{
-    font-size: 28px;
-    position: relative;
-    color: #43b582;
-}
-
-$size: 4px;
-
-.circleThing {
-  background: #9e978e;
-  display: inline-block;
-  height: $size * 0;
-  width: $size;
-  border-bottom-right-radius: $size * 2;
-  border-top-right-radius: $size * 2;
-  position: relative;
-  transition: .2s;
-  top: 15px;
-}
-
-.button-group:hover{
-    .circleThing{
-        height: $size * 5;
-    }
-}
-
-.selected-circleThing {
-  background: white;
-  display: inline-block;
-  height: $size * 10;
-  width: $size;
-  border-bottom-right-radius: $size * 2;
-  border-top-right-radius: $size * 2;
-  position: relative;
-  transition: .2s;
-  top: 6px;
-}
-
 .logoutButton{
     position: fixed;
-}
-
-.button-group {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    top: 10px;
-    padding: 0 0 10px 0;
-}
-
-.server-holder{
-    display: flex;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    position: relative;
-    padding: 0 0 10px 0;    
-    width: 100%;
-    height: 100%;
-}
-
-.selected-button-group{
-    display: flex;
-    align-items: center;
-    position: relative;
-    top: 10px;
-    padding: 0 0 10px 0;
-}
-
-.server-list{
-    padding: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.server-link{
-    width: 52px;
-    height: 52px;
-    background-color: #2f3035;
-    border-radius: 30px;
-    position: relative;
-    left: 5px;
-    display: flex;
-    outline: 0;
-    border: 0;
-    justify-content: center;
-    align-items: center;
-    transition: .1s;
-}
-
-.selected-server-link{
-    width: 52px;
-    height: 52px;
-    background-color:  #7289da;
-    border-radius: 18px;
-    position: relative;
-    left: 5px;
-    display: flex;
-    outline: 0;
-    border: 0;
-    justify-content: center;
-    align-items: center;
-    transition: .1s;
-}
-
-.selected-server-link p{
-        color: white;
-}
-
-.server-link p{
-    color: #b9bbbe;
-    font-weight: 600;
-}
-
-.server-link:active{
-    top: 2px;
-}
-
-.server-link:hover {
-    border-radius: 20px;
-    background-color: #7289da;
-    p{
-        color: white;
-    }
 }
 
 .channel-divider{
