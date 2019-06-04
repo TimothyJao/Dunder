@@ -68,7 +68,7 @@ export const fetchDMs = (user_id) => dispatch => {
 export const createDM = (sender_id, recipient_username) => dispatch => {
     return(
         APIUtil.fetchUser(recipient_username).then(
-            recipient => APIUtil.createChannel({ sender_id, recipient_id: recipient.id, name: "DM" }).then(
+            recipient => APIUtil.createChannel({ sender_id, recipient_id: recipient.id, name: recipient.username }).then(
                 channel => (dispatch(receiveCurrentChannel(channel))),
                 err => (dispatch(receiveErrors(err.responseJSON)))
             )

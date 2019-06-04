@@ -6,8 +6,6 @@ class Api::ChannelsController < ApplicationController
     end
     
     def fetch_dms
-        # @channels_sender = Channel.where(sender_id: params[:id])
-        # @channels_recipient = Channel.where(recipient_id: params[:id])
         @channels = Channel.where("sender_id = ? OR recipient_id = ?", params[:id], params[:id])
         render "api/channels/index"
     end

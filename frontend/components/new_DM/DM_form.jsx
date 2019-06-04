@@ -25,16 +25,6 @@ class DMForm extends React.Component {
         });
     }
 
-    // handleJoinSubmit(e) {
-    //     e.preventDefault();
-    //     this.state.url = this.state.url.slice(-6);
-    //     const server = Object.assign({}, this.state);
-    //     this.props.createUserServer(server).then((server) => {
-    //         this.props.closeModal();
-    //         this.props.history.push(`/browse/${server.userServer.server_id}`);
-    //     });
-    // }
-
     renderErrors() {
         if (this.props.errors) {
             return (
