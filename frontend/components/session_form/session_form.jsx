@@ -54,17 +54,19 @@ class SessionForm extends React.Component {
                             {this.props.welcomeMessage}
                             {this.renderErrors()}
                         </div>
-                        <form onSubmit={this.handleSubmit}>
-                            <label className="username">Username <br />
-                                <input type="text" value={this.state.username} onChange={this.update('username')}/>
-                            </label>
-                            <br />
-                            <label className="password">Password <br />
-                                <input type="password" value={this.state.password} onChange={this.update('password')} />
-                            </label>
-                            <br />
-                            <input className="submit" type="submit" value={this.props.formType} />
-                        </form>
+                        <div className="user-auth-form">
+                            <form onSubmit={this.handleSubmit}>
+                                <label className="username">Username <br />
+                                    <input type="text" value={this.state.username} onChange={this.update('username')} />
+                                </label>
+                                <br />
+                                <label className="password">Password <br />
+                                    <input type="password" value={this.state.password} onChange={this.update('password')} />
+                                </label>
+                                <br />
+                                <input className="submit" type="submit" value={this.props.formType} />
+                            </form>
+                        </div>
                         <div className = "switch-container">
                             {this.props.navLink}
                         </div>

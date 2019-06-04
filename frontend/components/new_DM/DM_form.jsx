@@ -44,10 +44,10 @@ class DMForm extends React.Component {
             <div className="server-box">
                 <div className="create-top">
                     <p className="CYS"> SEND A DIRECT MESSAGE</p>
-                    <div className="welcome">
+                    {/* <div className="welcome">
                         {this.props.welcomeMessage}
                         {this.renderErrors()}
-                    </div>
+                    </div> */}
                     <div className="create-header">
                         <p className="blahblah"> Send a direct message to another user. No one else</p>
                         <p className="blahblah"> can see this message except for you and the recipient.</p>

@@ -91,21 +91,23 @@ class ServerForm extends React.Component {
             <div className="server-box">
                 <div className="create-top">
                     <p className="CYS"> CREATE YOUR SERVER</p>
-                    <div className="welcome">
+                    {/* <div className="welcome">
                         {this.props.welcomeMessage}
                         {this.renderErrors()}
-                    </div>
+                    </div> */}
                     <div className="create-header">
                         <p className="blahblah"> By creating a server, you will have access to free voice</p>
                         <p className="blahblah">and text chat to use amongst your friends.</p>
                     </div>
-                    <form className="create-form" onSubmit={this.handleCreateSubmit}>
-                        <label className="server-name">SERVER NAME <br />
-                            <input type="text" value={this.state.name} onChange={this.update('name')} />
-                        </label>
-                        <br />
-                        <input className="server-submit" type="submit" value={"Create Server"} />
-                    </form>
+                    <div className = "create-form-container">
+                        <form className="create-form" onSubmit={this.handleCreateSubmit}>
+                            <label className="server-name">SERVER NAME <br />
+                                <input type="text" value={this.state.name} onChange={this.update('name')} />
+                            </label>
+                            <br />
+                            <input className="server-submit" type="submit" value={"Create Server"} />
+                        </form>
+                    </div>
                     <div className="BACK" onClick={()=>this.props.openModal('chooseOption')}>
                         <i className="fas fa-long-arrow-alt-left"></i>
                         <p>BACK</p>
@@ -119,12 +121,12 @@ class ServerForm extends React.Component {
     joinServer() {
         return (
             <div className="server-box">
-                <div className="create-top">
+                <div className="join-top">
                     <p className="JAS"> JOIN A SERVER</p>
-                    <div className="welcome">
+                    {/* <div className="welcome">
                         {this.props.welcomeMessage}
                         {this.renderErrors()}
-                    </div>
+                    </div> */}
                     <div className="create-header">
                         <p className="blahblah"> Enter an Instant Invite below to join an existing</p>
                         <p className="blahblah">server. The invite will look something like this:</p>

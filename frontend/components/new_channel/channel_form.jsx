@@ -55,10 +55,10 @@ class ChannelForm extends React.Component {
             <div className="server-box">
                 <div className="create-top">
                     <p className="CYS"> CREATE A CHANNEL</p>
-                    <div className="welcome">
+                    {/* <div className="welcome">
                         {this.props.welcomeMessage}
                         {this.renderErrors()}
-                    </div>
+                    </div> */}
                     <div className="create-header">
                         <p className="blahblah"> Create a channel in this server to talk</p>
                         <p className="blahblah">to your friends about any topic you want.</p>

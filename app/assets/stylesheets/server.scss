@@ -112,7 +112,8 @@
     }
 }
 
-.create-top{
+.create-top,
+.join-top{
     padding: 28px 40px 0 40px;
     width: 100%;
 }
@@ -132,7 +133,6 @@
     font-size: 11px;
     font-weight: 700;
     position: relative;
-    bottom: 60px;
 }
 
 .server-name input{
@@ -149,7 +149,6 @@
     cursor: pointer;
     font-weight: 600;
     position: relative;
-    bottom: 15px;
     text-align: center;
     height: 25%;
     width: 80%;
@@ -158,6 +157,7 @@
     border: 0;
     outline: 0;
     transition: .1s, .3s;
+    top: 30%;
 }
 
 .server-submit:hover{
@@ -218,7 +218,7 @@
     cursor: pointer;
     font-weight: 600;
     position: relative;
-    bottom: 15px;
+    top: 20%;
     text-align: center;
     height: 25%;
     width: 80%;
@@ -239,4 +239,8 @@
     color: #7289da;
     font-size: 24px;
     text-align: center;
+}
+
+.join-top .BACK{
+    top: -20px;
 }
