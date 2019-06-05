@@ -220,7 +220,7 @@ class channelForm extends React.Component {
         if (isNaN(this.props.serverId)) {
             current_server = -1;
         } else {
-            current_server = prevProps.serverId;
+            current_server = this.props.serverId;
         }
         if (Object.keys(prevProps.channels).length !== Object.keys(this.props.channels).length) {
             this.setState({ channels: this.props.channels })
@@ -231,6 +231,10 @@ class channelForm extends React.Component {
                 this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
             }
         }
+    }
+
+    componentWillUnmount() {
+        this.setState({channels: {}})
     }
 
     render() {

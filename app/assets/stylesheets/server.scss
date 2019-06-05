@@ -1,3 +1,6 @@
+/*Styling for create/join server and create channel/DM modal*/
+
+/* modal for new server/channel*/
 .server-box{
     width: 540px;
     height: 420px;
@@ -16,6 +19,8 @@
     width: 100%;
     text-align: center;
 }
+
+/* Allows user to select either join or create for servers */
 
 .selections{
     width: 452px;
@@ -36,6 +41,16 @@
     border: 1px solid #e5e5e5;
     padding: 10px
 }
+
+.selectOne:hover{
+    cursor: pointer;
+    .create-button{
+        background-color: #677bc3;
+    }
+}
+
+
+/* Create selection */
 
 .create{
     margin-top: 20px;
@@ -76,6 +91,8 @@
     border-radius: 3px;
 }
 
+/* Join Selection */
+
 .fa-sign-in-alt{
     color: #43b580;
     font-size: 80px;
@@ -99,18 +116,13 @@
     text-align: center;
 }
 
-.selectOne:hover{
-    cursor: pointer;
-    .create-button{
-        background-color: #677bc3;
-    }
-}
-
 .join-box:hover{
     .join-button{
         background-color: #359368;
     }
 }
+
+/* Create Modal */
 
 .create-top,
 .join-top{
@@ -203,6 +215,8 @@
     position: relative;
     left: 3px;
 }
+
+/* Join a server modal*/
 
 .JAS{
     padding-top: 20px;
