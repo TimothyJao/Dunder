@@ -95,7 +95,7 @@ form {
 
 input{
     text-indent: 12px;
-    width: 80%;
+    width: 90%;
     height: 20%;
     border-radius: 5px;
     outline: none;
@@ -121,7 +121,7 @@ input{
     text-align: center;
     top: 70px;
     height: 25%;
-    width: 80%;
+    width: 90%;
     background: #7289da;
     color: white;
     border: 0;
@@ -133,17 +133,11 @@ input{
     background: #5f73b8;
 }
 
-.username input{
+.username input,
+.password input{
     position: relative;
     top: 5px;
 }
-
-
-.password input {
-    position: relative;
-    top: 5px;
-}
-
 /* Allows users to switch between login and signup*/
 
 .switch-container{

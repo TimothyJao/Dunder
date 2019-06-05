@@ -165,7 +165,9 @@ class channelForm extends React.Component {
         } else{
             let ownerAdd = <></>;
             let ownerTrash = <></>;
-            if (this.props.currentUser[0].id === this.findServer().owner_id){
+            let currentId = this.props.currentUser[0].id;
+            let ownerId = this.findServer().owner_id;
+            if (currentId === ownerId){
                 ownerAdd = <i className="fa fa-plus" onClick={() => this.props.openModal('createChannel')}></i>;
                 ownerTrash = <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>;
             }
@@ -177,6 +179,11 @@ class channelForm extends React.Component {
                     </div>
                     <ul className="channel-list">
                         {Object.values(this.state.channels).map((channel) => {
+                            if(currentId === ownerId && channel.name != "general"){
+                                ownerTrash = <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>;
+                            } else{
+                                ownerTrash = <></>
+                            }
                             if (channel.id === this.props.channelId) {
                                 return (
                                     <li className="channel-group-selected" key={channel.id}>

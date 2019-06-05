@@ -18,11 +18,19 @@ class Api::ChannelsController < ApplicationController
 
 
     def create
-        @channel = Channel.new(channel_params)
-        if @channel.save
-            render "api/channels/show"
+        @DM = Channel.where("sender_id = ? AND recipient_id = ?", channel_params[:sender_id], channel_params[:recipient_id])
+        @channel = Channel.where("server_id = ? AND name = ?", channel_params[:server_id], channel_params[:name])
+        if !@DM.empty?
+            render json: ["You already have a chat with this user"], status: 422
+        elsif !@channel.empty?
+            render json: ["Channel already exists"], status: 422
         else
-            render json: @channel.errors.full_messages, status: 422
+            @channel = Channel.new(channel_params)
+            if @channel.save
+                render "api/channels/show"
+            else
+                render json: @channel.errors.full_messages, status: 422
+            end
         end
     end
 

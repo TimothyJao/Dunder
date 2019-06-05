@@ -1,5 +1,6 @@
 import { RECEIVE_USERS_SERVERS, RECEIVE_USER_SERVER, DELETE_USER_SERVER } from '../actions/user_server_actions';
 import {RECEIVE_PAYLOAD} from '../actions/server_actions'
+import {LOGOUT_CURRENT_USER} from '../actions/session_actions'
 const serversReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
@@ -13,6 +14,8 @@ const serversReducer = (state = {}, action) => {
             let newState = Object.assign({}, state);
             delete (newState[action.userServer.id]);
             return newState;      
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
