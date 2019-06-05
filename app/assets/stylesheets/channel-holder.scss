@@ -78,10 +78,7 @@
     }
 }
 
-.invite-div p{
-    color: #8fa0e1;
-}
-
+.invite-div p,
 .invite-div i{
     color: #8fa0e1;
 }
@@ -92,12 +89,12 @@
     }
 }
 
-.delete-div p{
+.delete-div p,
+.delete-div i{
     color: #e14f66;
 }
 
 .delete-div i{
-    color:  #e14f66;
     padding-right: 18px;
 }
 
@@ -145,7 +142,8 @@
     align-content: flex-start;
 }
 
-.channel-group{
+.channel-group,
+.channel-group-selected{
     border-radius: 4px;
     margin: 1px 8px 1px;
     padding: 0px 8px;
@@ -155,11 +153,6 @@
 
 .channel-group-selected{
     background-color: #40444b;
-    border-radius: 4px;
-    margin: 1px 8px 1px;
-    padding: 0px 8px;
-    height: 32px;
-    width: 100%;
     .fa-trash-alt{
         display: inline;
     }
@@ -175,13 +168,7 @@
     }
 }
 
-.channel-link{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center; 
-}
-
+.channel-link,
 .channel-link-selected{
     height: 100%;
     width: 100%;
@@ -189,20 +176,20 @@
     align-items: center; 
 }
 
-.fa-hashtag{
+.fa-hashtag,
+.fa-at{
     color: #72767d;
-    padding: 0px 6px 0px 0px;
+    padding-right: 6px;
 }
 
-.channel-name{
+.channel-name,
+.channel-name-selected{
     position: relative;
     font-size: 14px;
     color: #72767d;
 }
 
 .channel-name-selected{
-    position: relative;
-    font-size: 14px;
     color: #ffffff;
 }
 

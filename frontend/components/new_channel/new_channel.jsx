@@ -25,23 +25,12 @@ class ChannelForm extends React.Component {
             this.props.history.push(`/browse/${this.props.serverId}/${data.currentChannel.channel.id}`);
         });
     }
-
-    // handleJoinSubmit(e) {
-    //     e.preventDefault();
-    //     this.state.url = this.state.url.slice(-6);
-    //     const server = Object.assign({}, this.state);
-    //     this.props.createUserServer(server).then((server) => {
-    //         this.props.closeModal();
-    //         this.props.history.push(`/browse/${server.userServer.server_id}`);
-    //     });
-    // }
-
     renderErrors() {
         if (this.props.errors) {
             return (
-                <ul className="errors">
+                <ul className="modal-errors">
                     {this.props.errors.map((error, i) => (
-                        <li key={`error-${i}`}>
+                        <li key={`error-${i}`} className="errorMessage">
                             {error}
                         </li>
                     ))}
@@ -55,26 +44,17 @@ class ChannelForm extends React.Component {
             <div className="server-box">
                 <div className="create-top">
                     <p className="CYS"> CREATE A CHANNEL</p>
-                    {/* <div className="welcome">
-                        {this.props.welcomeMessage}
-                        {this.renderErrors()}
-                    </div> */}
                     <div className="create-header">
-                        <p className="blahblah"> Create a channel in this server to talk</p>
-                        <p className="blahblah">to your friends about any topic you want.</p>
+                        <p className="selection-description"> Create a channel in this server to talk</p>
+                        <p className="selection-description">to your friends about any topic you want.</p>
                     </div>
                     <form className="create-form" onSubmit={this.handleCreateSubmit}>
                         <label className="server-name">CHANNEL NAME <br />
                             <input type="text" value={this.state.name} onChange={this.update('name')} />
                         </label>
-                        <br />
+                        {this.renderErrors()}
                         <input className="server-submit" type="submit" value={"Create Channel"} />
                     </form>
-                    <div className="BACK" onClick={()=>this.props.openModal('chooseOption')}>
-                        <i className="fas fa-long-arrow-alt-left"></i>
-                        <p>BACK</p>
-                    </div>
-                        
                 </div>
             </div>
         )

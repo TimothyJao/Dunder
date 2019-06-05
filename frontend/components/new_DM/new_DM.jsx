@@ -28,9 +28,9 @@ class DMForm extends React.Component {
     renderErrors() {
         if (this.props.errors) {
             return (
-                <ul className="errors">
+                <ul className="modal-errors">
                     {this.props.errors.map((error, i) => (
-                        <li key={`error-${i}`}>
+                        <li key={`error-${i}`} className = "errorMessage">
                             {error}
                         </li>
                     ))}
@@ -44,20 +44,16 @@ class DMForm extends React.Component {
             <div className="server-box">
                 <div className="create-top">
                     <p className="CYS"> SEND A DIRECT MESSAGE</p>
-                    {/* <div className="welcome">
-                        {this.props.welcomeMessage}
-                        {this.renderErrors()}
-                    </div> */}
                     <div className="create-header">
-                        <p className="blahblah"> Send a direct message to another user. No one else</p>
-                        <p className="blahblah"> can see this message except for you and the recipient.</p>
+                        <p className="selection-description"> Send a direct message to another user. No one else can</p>
+                        <p className="selection-description"> see this message except for you and the recipient.</p>
                     </div>
                     <form className="create-form" onSubmit={this.handleCreateSubmit}>
-                        <label className="server-name">RECIPIENT NAME <br />
+                        <label className="server-name">RECIPIENT USERNAME <br />
                             <input type="text" value={this.state.recipient} onChange={this.update('recipient')} />
                         </label>
-                        <br />
-                        <input className="server-submit" type="submit" value={"Create Channel"} />
+                        {this.renderErrors()}
+                        <input className="server-submit" type="submit" value={"Create Direct Message"} />
                     </form>
                         
                 </div>

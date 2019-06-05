@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { createChannel } from '../../actions/channel_actions';
-// import { createUserServer } from '../../actions/user_server_actions'
-import ServerForm from './channel_form';
+import ServerForm from './new_channel';
 import { closeModal, openModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,7 +19,7 @@ const mapDispatchToProps = dispatch => {
         createChannel: (channel) => dispatch(createChannel(channel)),
         closeModal: () => dispatch(closeModal()),
         openModal: (choice) => dispatch(openModal(choice)),
-        
+        clearSessionErrors: () => dispatch(clearSessionErrors())
     })
 };
 

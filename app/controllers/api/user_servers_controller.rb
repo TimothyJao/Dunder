@@ -5,16 +5,16 @@ class Api::UserServersController < ApplicationController
     end
 
     def create
-        @server_id = Server.find_by(url: params[:userServer][:url]).id
-        if @server_id
-            @user_server = UserServer.new({user_id: current_user.id, server_id: @server_id})
+        @server = Server.find_by(url: params[:userServer][:url])
+        if @server
+            @user_server = UserServer.new({user_id: current_user.id, server_id: @server.id})
             if @user_server.save
                 render "api/users_servers/show"
             else 
-                render json: @user.errors.full_messages, status: 422
+                render json: @user_server.errors.full_messages, status: 422
             end
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: ["Server cannot be found"], status: 422
         end
     end
 

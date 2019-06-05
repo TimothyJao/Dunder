@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { createDM} from '../../actions/channel_actions';
-// import { createUserServer } from '../../actions/user_server_actions'
-import DMForm from './DM_form';
-import { closeModal, openModal } from '../../actions/modal_actions'
+import DMForm from './new_DM';
+import { closeModal } from '../../actions/modal_actions'
+import { clearSessionErrors } from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => {
     return ({
         createDM: (sender_id, recipient_username) => dispatch(createDM(sender_id, recipient_username)),
         closeModal: () => dispatch(closeModal()),
+        clearSessionErrors: () => dispatch(clearSessionErrors())
     })
 };
 

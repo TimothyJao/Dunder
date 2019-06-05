@@ -9,6 +9,7 @@ import serverForm from './server_form';
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        errors: state.errors.session,
         serverId: parseInt(ownProps.match.params.server_id),
         current_user: Object.values(state.entities.users),
         servers: Object.values(state.entities.servers)

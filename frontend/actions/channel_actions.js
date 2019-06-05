@@ -5,26 +5,26 @@ export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS"
 export const RECEIVE_CURRENT_CHANNEL = "RECEIVE_CURRENT_CHANNEL";
 export const DELETE_CHANNEL = "DELETE_CHANNEL"
 
-export const receiveAllChannels = channels => {
+const receiveAllChannels = channels => {
     return ({
         type: RECEIVE_ALL_CHANNELS,
         channels
     })
 }
 
-export const receiveCurrentChannel = currentChannel => {
+const receiveCurrentChannel = currentChannel => {
     return ({
         type: RECEIVE_CURRENT_CHANNEL,
         currentChannel
     })
 }
 
-export const deleteCurrentChannel = channel_id => ({
+const deleteCurrentChannel = channel_id => ({
     type: DELETE_CHANNEL,
     channel_id
 })
 
-export const receiveErrors = errors => ({
+const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 })
@@ -71,7 +71,8 @@ export const createDM = (sender_id, recipient_username) => dispatch => {
             recipient => APIUtil.createChannel({ sender_id, recipient_id: recipient.id, name: recipient.username }).then(
                 channel => (dispatch(receiveCurrentChannel(channel))),
                 err => (dispatch(receiveErrors(err.responseJSON)))
-            )
+            ),
+            err => (dispatch(receiveErrors(err.responseJSON)))
         )
     )
 }

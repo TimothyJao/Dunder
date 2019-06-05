@@ -1,29 +1,35 @@
 import * as APIUtil from '../util/user_server_api_util';
 
-export const RECEIVE_USERS_SERVERS = "RECEIVE_USERS_SERVERS"
-export const RECEIVE_USER_SERVER = "RECEIVE_USER_SERVER"
+export const RECEIVE_USERS_SERVERS = "RECEIVE_USERS_SERVERS";
+export const RECEIVE_USER_SERVER = "RECEIVE_USER_SERVER";
 export const DELETE_USER_SERVER = "DELETE_USER_SERVER";
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
-export const receiveUsersServers = usersServers => {
+const receiveUsersServers = usersServers => {
     return ({
         type: RECEIVE_USERS_SERVERS,
         usersServers
     })
 }
 
-export const receiveUserServer = userServer => {
+const receiveUserServer = userServer => {
     return ({
         type: RECEIVE_USER_SERVER,
         userServer
     })
 }
 
-export const destroyUserServer = userServer => {
+const destroyUserServer = userServer => {
     return ({
         type: DELETE_USER_SERVER,
         userServer
     })
 }
+
+const receiveErrors = errors => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+})
 
 export const fetchUsersServers = () => dispatch => {
     return (

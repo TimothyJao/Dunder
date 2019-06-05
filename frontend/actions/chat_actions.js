@@ -2,7 +2,7 @@ import * as APIUtil from '../util/chat_util';
 
 export const RECEIVE_ALL_MESSAGES = "RECEIVE_ALL_MESSAGES"
 
-export const receiveAllMessages = messages => {
+const receiveAllMessages = messages => {
     return ({
         type: RECEIVE_ALL_MESSAGES,
         messages

@@ -25,7 +25,6 @@ nav{
 
 .right-nav{
     width: 250px;
-    display: flex;
     align-items: flex-end;
 }
 
@@ -185,11 +184,7 @@ header{
     align-items: center;
 }
 
-.top{
-    position: relative;
-    top: 225px;
-}
-
+.top,
 .bottom{
     position: relative;
     top: 225px;

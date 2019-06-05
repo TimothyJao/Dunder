@@ -11,7 +11,7 @@
     flex-wrap: wrap;
 }
 
-.OH{
+.option-header{
     color: #7289da;
     font-weight: 700;
     position: relative;
@@ -140,7 +140,21 @@
     font-size: 18px;
 }
 
+.selection-description{
+    color: #99aab4;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px;
+}
+
+.create-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .server-name{
+    width: 100%;
     color: #88919c;
     font-size: 11px;
     font-weight: 700;
@@ -152,37 +166,40 @@
     border: none;
     border-bottom: 2px solid #7289da;
     border-radius: 0;
-    margin-top: 5px;
+    margin-top: 16px;
+    padding-bottom: 3px;
     font-size: 16px;
     color: #36373b;
+    width: 90%;
 }
 
-.server-submit{
+.modal-errors{
+    padding-left: 0;
+    right: 0;
+}
+
+.server-submit,
+.server-join{
     cursor: pointer;
     font-weight: 600;
     position: relative;
     text-align: center;
     height: 25%;
-    width: 80%;
+    width: 90%;
     background: #7289da;
     color: white;
     border: 0;
     outline: 0;
     transition: .1s, .3s;
-    top: 30%;
 }
+
+
 
 .server-submit:hover{
     background: #677bc3;
 }
 
-.blahblah{
-    color: #99aab4;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    padding: 2px;
-}
+
 
 .create-header{
     padding-top: 30px;
@@ -200,19 +217,20 @@
     border-bottom: 2px solid #949494;
 }
 
-.BACK i{
-    font-size: 20px;
+.BACK i,
+.BACK p{
     color: #99aab4;
     display: inline-block;
     position: relative;
+}
+
+.BACK i{
+    font-size: 20px;
     top: 3px;
 }
 
 .BACK p{
     font-size: 12px;
-    color: #99aab4;
-    display: inline-block;
-    position: relative;
     left: 3px;
 }
 
@@ -229,18 +247,7 @@
 }
 
 .server-join{
-    cursor: pointer;
-    font-weight: 600;
-    position: relative;
-    top: 20%;
-    text-align: center;
-    height: 25%;
-    width: 80%;
     background: #43b582;
-    color: white;
-    border: 0;
-    outline: 0;
-    transition: .1s, .3s;
 }
 
 .server-join:hover{

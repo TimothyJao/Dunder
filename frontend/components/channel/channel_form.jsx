@@ -124,6 +124,8 @@ class channelForm extends React.Component {
 
     listChannels() {
         if (this.isHome()) {
+            let currentId = this.props.currentUser[0].id
+            let name;
             return (
                 <>
                     <div className="channel-list-header">
@@ -132,12 +134,15 @@ class channelForm extends React.Component {
                     </div>
                     <ul className="channel-list">
                         {Object.values(this.state.channels).map((channel) => {
-                            if (channel.id === this.props.channelId) {
+                            if(!channel.sender) return null;
+                            if(currentId === channel.recipient.id){name = channel.sender.username;} 
+                            else if (currentId === channel.sender.id){name = channel.recipient.username;}
+                            if (channel.id === this.props.channelId){
                                 return (
                                     <li className="channel-group-selected" key={channel.id}>
                                         <Link className="channel-link-selected" to={`/browse/DMs/${channel.id}`} >
-                                            <i className="fas fa-hashtag"></i>
-                                            <span className="channel-name-selected">{channel.name}</span>
+                                            <i className="fas fa-at"></i>
+                                            <span className="channel-name-selected">{name}</span>
                                             <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>
                                         </Link>
                                     </li>
@@ -146,8 +151,8 @@ class channelForm extends React.Component {
                                 return (
                                     <li className="channel-group" key={channel.id}>
                                         <Link className="channel-link" to={`/browse/DMs/${channel.id}`} >
-                                            <i className="fas fa-hashtag"></i>
-                                            <span className="channel-name">{channel.name}</span>
+                                            <i className="fas fa-at"></i>
+                                            <span className="channel-name">{name}</span>
                                             <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>
                                         </Link>
                                     </li>
@@ -202,7 +207,6 @@ class channelForm extends React.Component {
 
     componentDidMount() {
         if (this.isHome()) {
-            
             this.props.fetchDMs(this.props.currentUser[0].id).then((DMs) => this.setState({ channels: DMs.channels }))
         } else{
             this.props.fetchChannels(this.props.serverId).then(() => this.setState({ channels: this.props.channels }))
@@ -210,21 +214,15 @@ class channelForm extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        let prev_server;
-        let current_server;
-        if (isNaN(prevProps.serverId)){
-            prev_server = -1;
-        } else{
-            prev_server = prevProps.serverId;
-        }
-        if (isNaN(this.props.serverId)) {
-            current_server = -1;
-        } else {
-            current_server = this.props.serverId;
-        }
+        let prevServer;
+        let currentServer;
+        if (isNaN(prevProps.serverId)){prevServer = -1;} 
+        else{prevServer = prevProps.serverId;}
+        if (isNaN(this.props.serverId)) {currentServer = -1;} 
+        else {currentServer = this.props.serverId;}
         if (Object.keys(prevProps.channels).length !== Object.keys(this.props.channels).length) {
             this.setState({ channels: this.props.channels })
-        }else if (prev_server != current_server){
+        }else if (prevServer != currentServer){
             if (this.isHome()){
                 this.props.fetchDMs(this.props.currentUser[0].id).then((DMs) => { this.setState({ channels: DMs.channels})})
             } else {
