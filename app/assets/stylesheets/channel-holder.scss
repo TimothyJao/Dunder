@@ -22,10 +22,14 @@
 }
 
 .header-content span{
+    width: 80%;
     display: inline-block;
     position: relative;
     left: 15px;
     font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 20px;
 }
 
 .header-content i{

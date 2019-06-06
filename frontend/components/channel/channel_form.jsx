@@ -23,9 +23,7 @@ class channelForm extends React.Component {
         let that = this;
         let currentServer;
         this.props.servers.forEach(server => {
-            if (server.id === that.props.serverId) {
-                currentServer = server;
-            }
+            if (server.id === that.props.serverId) currentServer = server;
         })
         if (currentServer)
             return currentServer;

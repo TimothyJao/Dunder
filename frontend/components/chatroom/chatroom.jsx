@@ -46,17 +46,16 @@ class ChatRoom extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (!this.bottom.current) return null;
-        this.bottom.current.scrollIntoView();
         if (prevProps.parentId != this.props.parentId) {
             this.messageList = [];
-            this.setState({messages:[]})
+            this.setState({ messages: [] })
             this.props.fetchMessages(this.props.parentId)
-            // .then((messages) => {
-            // this.setState({messages:messages.messages })})
             App.cable.subscriptions.remove(this.server);
             this.createSocket();
         }
+        if (!this.bottom.current) return null;
+        this.bottom.current.scrollIntoView();
+        
     }
 
     componentWillUnmount(){
