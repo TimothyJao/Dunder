@@ -46,6 +46,7 @@ class deleteServerForm extends React.Component {
     }
 
     fullLeaveServer(serverId) {
+        
         this.props.leaveServer(this.findUserServer(serverId)).then(() => this.props.history.push('/browse'))
         this.props.closeModal();
     }

@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/user_server_api_util';
-
+import {RECEIVE_PAYLOAD} from './server_actions'
 export const RECEIVE_USERS_SERVERS = "RECEIVE_USERS_SERVERS";
 export const RECEIVE_USER_SERVER = "RECEIVE_USER_SERVER";
 export const DELETE_USER_SERVER = "DELETE_USER_SERVER";
@@ -12,10 +12,10 @@ const receiveUsersServers = usersServers => {
     })
 }
 
-const receiveUserServer = userServer => {
+const receiveUserServer = payload => {
     return ({
-        type: RECEIVE_USER_SERVER,
-        userServer
+        type: RECEIVE_PAYLOAD,
+        payload
     })
 }
 
@@ -43,7 +43,7 @@ export const fetchUsersServers = () => dispatch => {
 export const createUserServer = (userServer) => dispatch => {
     return (
         APIUtil.createUserServer(userServer).then(
-            userServer => (dispatch(receiveUserServer(userServer))),
+            payload => (dispatch(receiveUserServer(payload))),
             err => (dispatch(receiveErrors(err.responseJSON)))
         )
     )
