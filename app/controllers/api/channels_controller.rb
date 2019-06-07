@@ -27,7 +27,9 @@ class Api::ChannelsController < ApplicationController
         else
             @channel = Channel.new(channel_params)
             if @channel.save
-                render "api/channels/show"
+                @sender = (User.find(@channel.sender_id))
+                @recipient = (User.find(@channel.recipient_id))
+                render "api/channels/dm"
             else
                 render json: @channel.errors.full_messages, status: 422
             end

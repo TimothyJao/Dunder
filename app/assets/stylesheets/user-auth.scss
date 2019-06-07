@@ -37,7 +37,8 @@ html, body {
 
 /* Styling for the login/signup box*/
 
-.login-box{
+.login-box,
+.guest-box{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -51,7 +52,8 @@ html, body {
 
 /* Welcome message */
 
-.welcome{
+.welcome, 
+.guest-welcome{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,11 +142,12 @@ input{
 }
 /* Allows users to switch between login and signup*/
 
-.switch-container{
+.switch-container,
+.guest-switch{
     width: 250px;
     position: relative;
     transform: translateX(-50%);
-    left: 50%;
+    left: 52%;
     height: 10%;
     display: flex;
     justify-content: space-around;
@@ -160,7 +163,63 @@ ul {
     right: 20px;
 }
 
-.switch-container p{
+.switch-container p,
+.guest-switch p{
     font-size: 16px;
     color: #bbbbbb;
+}
+
+/* Styling for the guest page */
+.guest-box{
+    height: 400px;
+}
+
+.guest-welcome h3{
+    position: relative;
+    font-size: 30px;
+    top: 50px;
+    color: #dddddd;
+}
+
+.guest-welcome p{
+    position: relative;
+    font-size: 16px;
+    top: 80px;
+    color: #808080;
+}
+
+#dunder-selector{
+    position: relative;
+    top: 10%;
+    border: 10px solid #7289da;
+    background-color: #7289da;
+    color: white;
+    font-size: 20px;
+    left: 24%;
+}
+
+#dunder-selector:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+#dunder-selector.select-arrow-active:after{
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+.guest-box .submit{
+    position: relative;
+    top: 40%;
+}
+
+.guest-switch{
+    width: 120px;
+    left: 53%;
 }

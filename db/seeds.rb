@@ -22,7 +22,8 @@ User.create({username: "MeredithPalmer", password:"MeredithPalmer"}) #11
 User.create({username: "PhyllisVance", password:"PhyllisVance"}) #12
 User.create({username: "OscarMartinez", password:"OscarMartinez"}) #13
 User.create({username: "RyanHoward", password:"RyanHoward"}) #14
-User.create({username: "Creed Bratton", password: "BOBODDY"}) #15
+User.create({username: "CreedBratton", password: "BOBODDY"}) #15
+User.create({username: "FutureDwight", password: "JimHalpert"})
 
 Server.destroy_all
 
@@ -70,7 +71,7 @@ UserServer.create({server_id: 3, user_id: 12})
 
 UserServer.create({server_id: 4, user_id: 1})
 UserServer.create({server_id: 4, user_id: 2})
-UserServer.create({server_id: 4, user_id: 4})
+UserServer.create({server_id: 4, user_id: 3})
 UserServer.create({server_id: 4, user_id: 4})
 UserServer.create({server_id: 4, user_id: 5})
 UserServer.create({server_id: 4, user_id: 6})
@@ -126,6 +127,7 @@ Channel.create({name: "PhyllisVance", sender_id: 4, recipient_id: 12}) #22
 Channel.create({name: "RyanHoward", sender_id: 14, recipient_id: 4}) #23
 Channel.create({name: "KellyKapoor", sender_id: 10, recipient_id: 4}) #24
 
+Channel.create({name: "FutureDwight", sender_id: 16, recipient_id: 3})#25
 #seed server messages
     #Dunder Mifflin
         #General
@@ -309,13 +311,13 @@ Channel.create({name: "KellyKapoor", sender_id: 10, recipient_id: 4}) #24
             Message.create({sender_id: 2, parent_id: 17, message: "Take him to the warehouse. I just need 5 minutes"})
             Message.create({sender_id: 4, parent_id: 17, message: "Got it."})
         #Kevin 
-            Message.create({sender_id: 4, parent_id: 18, message: "Hey are you watching the Heats and 76ers game tonight?"})
+            Message.create({sender_id: 5, parent_id: 18, message: "Hey are you watching the Heats and 76ers game tonight?"})
             Message.create({sender_id: 2, parent_id: 18, message: "Of course! We're definately beating Lebron"})
-            Message.create({sender_id: 4, parent_id: 18, message: "You wanna sneak out a little early and go to Poor Richard's to watch?"})
+            Message.create({sender_id: 5, parent_id: 18, message: "You wanna sneak out a little early and go to Poor Richard's to watch?"})
             Message.create({sender_id: 2, parent_id: 18, message: "Oh yeah sure just give me 15 minutes"})
-            Message.create({sender_id: 4, parent_id: 18, message: "Another prank on Dwight?"})
+            Message.create({sender_id: 5, parent_id: 18, message: "Another prank on Dwight?"})
             Message.create({sender_id: 2, parent_id: 18, message: "You know it"})
-            Message.create({sender_id: 4, parent_id: 18, message: "I look forward to it"})
+            Message.create({sender_id: 5, parent_id: 18, message: "I look forward to it"})
         #Creed
             Message.create({sender_id: 15, parent_id: 19, message: "Hey wide-eyes, the tall dude is messing with your stuff"})
             Message.create({sender_id: 2, parent_id: 19, message: "Creed who do you think you're talking to?"})
@@ -337,6 +339,20 @@ Channel.create({name: "KellyKapoor", sender_id: 10, recipient_id: 4}) #24
             Message.create({sender_id: 3, parent_id: 21, message:"It's too late I told HR. You'll be docked a sick day"})
             Message.create({sender_id: 13, parent_id: 21, message:"Oh... dang it"})
             Message.create({sender_id: 3, parent_id: 21, message:"You deserve it. Time thief"})
+        #Future Dwight
+            Message.create({sender_id: 16, parent_id: 25, message:"Dwight. This is you from the future"})
+            Message.create({sender_id: 3, parent_id: 25, message:"No way. How do I know this isn't Jim?"})
+            Message.create({sender_id: 16, parent_id: 25, message:"You have to trust me Dwight. I know the future of this world."})
+            Message.create({sender_id: 3, parent_id: 25, message:"Ok I trust you what do you want"})
+            Message.create({sender_id: 16, parent_id: 25, message:"At 10:23 somoene poisons the coffee"})
+            Message.create({sender_id: 3, parent_id: 25, message:"That's one minute from now!"})
+            Message.create({sender_id: 16, parent_id: 25, message:"Do your duty Dwight!"})
+            Message.create({sender_id: 3, parent_id: 25, message:"I did it! Stanley is pissed at me because I slapped the coffee out of his hands but I did it!"})
+            Message.create({sender_id: 16, parent_id: 25, message:"Good job, me."})
+            Message.create({sender_id: 16, parent_id: 25, message:"There is a bomb in the woman's restroom Dwight. You have to defuse it or else the whole building will explode"})
+            Message.create({sender_id: 3, parent_id: 25, message:"I'm on it!"})
+
+            
     #Pam
         #Phyllis
             Message.create({sender_id: 4, parent_id: 22, message:"Nice outfit Phyllis ;)"})
@@ -353,11 +369,11 @@ Channel.create({name: "KellyKapoor", sender_id: 10, recipient_id: 4}) #24
             Message.create({sender_id: 4, parent_id: 23, message:"Whatever floats your boat"})
         #Kelly
             Message.create({sender_id: 10, parent_id: 24, message:"PAM HOW DARE YOU I THOUGHT WE WERE FRIENDS"})
-            Message.create({sender_id: 10, parent_id: 24, message:"What happened??"})
+            Message.create({sender_id: 4, parent_id: 24, message:"What happened??"})
             Message.create({sender_id: 10, parent_id: 24, message:"RYAN TOLD ME ABOUT THIS MESSAGES YOU SENT TO HIM"})
-            Message.create({sender_id: 10, parent_id: 24, message:"What messages? What are you talking about?"})
+            Message.create({sender_id: 4, parent_id: 24, message:"What messages? What are you talking about?"})
             Message.create({sender_id: 10, parent_id: 24, message:"Ryan left his computer open so I decided to snoop around. I saw your name in the DM section and I was about to open it when Ryan came back. He said that you were making moves on him. I can't believe you would hurt me like this."})
-            Message.create({sender_id: 10, parent_id: 24, message:"... ask him if you could read those messages. I didn't do anything"})
+            Message.create({sender_id: 4, parent_id: 24, message:"... ask him if you could read those messages. I didn't do anything"})
             Message.create({sender_id: 10, parent_id: 24, message:"I will and if I see anything fishy you're dead"})
             Message.create({sender_id: 10, parent_id: 24, message:"Sorry Pam I just read the messages"})
             

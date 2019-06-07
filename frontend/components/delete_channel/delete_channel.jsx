@@ -8,7 +8,9 @@ class deleteChannelForm extends React.Component {
     }
 
     fullDeleteChannel(channelId){
-        this.props.deleteChannel(channelId).then(() => this.props.history.push(`/browse/${this.props.serverId}`))
+        if (this.props.serverId) { this.props.deleteChannel(channelId).then(() => this.props.history.push(`/browse/${this.props.serverId}`))}
+        else { this.props.deleteChannel(channelId).then(() => this.props.history.push(`/browse`))}
+        
         this.props.closeModal();
     }
 
