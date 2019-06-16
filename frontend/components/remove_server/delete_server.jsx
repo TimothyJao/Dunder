@@ -92,7 +92,7 @@ class deleteServerForm extends React.Component {
                     </div>
 
                     <div className="invite-selection">
-                        <p>https://erised.com/{this.props.servers[serverId].url}</p>
+                        <p>https://dunder.com/{this.props.servers[serverId].url}</p>
                     </div>
                 </div>
             </>

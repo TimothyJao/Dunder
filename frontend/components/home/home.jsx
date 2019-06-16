@@ -48,7 +48,7 @@ const Home = (props) => {
             <nav>
                 <div className="main-nav">
                     <Link to="/" className="header-link">
-                        <h1 className="header-link">Erised</h1>
+                        <h1 className="header-link">Dunder</h1>
                     </Link>
                 </div>
 
@@ -58,11 +58,9 @@ const Home = (props) => {
             </nav>
             <header>
                 <div className="header-text">
-                    <p className="big"> It's time to ditch Skype and Teamspeak </p>
+                    <p className="big"> It's time to ditch Skype and Slack </p>
                     <p className="small">
-                        All-in-one voice and text chat for gamers that's free, secure, and
-                        works on both your desktop and phone. Stop paying for TeamSpeak
-                        servers and hassling with Skype. Simplify your life.
+                        Text chat for office workers that's free, secure and fun. Stop paying for basic functions on Slack and hassling with Skype. Simplify your life.
                     </p>
                 </div>
                 {redirectButton}

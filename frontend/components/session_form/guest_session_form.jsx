@@ -26,7 +26,7 @@ class GuestForm extends React.Component {
                 <section className="session-form">
                     <div className="index-link">
                         <Link to="/" className="header-link">
-                            <h1 className="header-link">Erised</h1>
+                            <h1 className="header-link">Dunder</h1>
                         </Link>
                     </div>
                     <div className="guest-box">

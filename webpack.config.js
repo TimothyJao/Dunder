@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-    entry: './frontend/erised.jsx',
+    entry: './frontend/dunder.jsx',
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
         filename: 'bundle.js',
