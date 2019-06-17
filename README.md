@@ -8,7 +8,6 @@ Dunder, a Discord clone, is a chatting application that allows a user to talk to
 * Backend: Rails/ActiveRecord/PostgreSQL
 * Frontend: React/Redux
 * [Action Cable](https://github.com/rails/rails/tree/master/actioncable)
-* [type.js](https://github.com/mattboldt/typed.js/)
 
 ## Features
 * Secure frontend to backend user authentication using BCrpyt
@@ -16,11 +15,25 @@ Dunder, a Discord clone, is a chatting application that allows a user to talk to
 * Allows users to join and leave other people's servers
 * Live text chat and retrieval of old chat messages within the same server
 
-### Servers
-Once a user is logged in, the list of servers that they have joined is displayed. 
+### Wireframe
+The landing page allows you to login, signup or browse as a guest
 <br />
 <br />
-<img src="./app/assets/images/serverindex.jpg" align="center" />
+<img src="./app/assets/images/landing.png" align="center" />
+<br />
+<br />
+
+Once a user is logged in, the list of servers that they have joined is displayed. In addition, the user can see and open any Direct Messages that were sent or received
+<br />
+<br />
+<img src="./app/assets/images/home.png" align="center" />
+<br />
+<br />
+
+The user can open up servers, enter channels and chat with other users. The messages are saved specifically for that channel.
+<br />
+<br />
+<img src="./app/assets/images/Channels.png" align="center" />
 <br />
 <br />
 
@@ -37,10 +50,6 @@ A user can also delete a server if they own it and leave a server if they do not
 <img src="./app/assets/images/delete.jpg" align="center" />
 <br />
 <br />
-
-### Live Chat
-Live chat 
-
 
 
 
