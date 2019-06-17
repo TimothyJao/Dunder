@@ -7,8 +7,8 @@ Dunder, a Discord clone, is a chatting application that allows a user to talk to
 ## Technologies
 * Backend: Rails/ActiveRecord/PostgreSQL
 * Frontend: React/Redux
-* [Action Cable] (https://github.com/rails/rails/tree/master/actioncable)
-* [type.js] (https://github.com/mattboldt/typed.js/)
+* [Action Cable](https://github.com/rails/rails/tree/master/actioncable)
+* [type.js](https://github.com/mattboldt/typed.js/)
 
 ## Features
 * Secure frontend to backend user authentication using BCrpyt
