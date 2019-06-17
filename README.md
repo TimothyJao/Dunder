@@ -47,19 +47,12 @@ There are options to create a brand new server or join a pre-existing server.
 A user can also delete a server if they own it and leave a server if they do not.
 <br />
 <br />
-<img src="./app/assets/images/delete.png" align="center" />
+<img src="./app/assets/images/delete.jpg" align="center" />
 <br />
 <br />
 
 Likewise, channels can be created and deleted but only by the owner of the server
-<br />
-<br />
-<img src="./app/assets/images/createchannel.png" align="center" />
-<br />
-<br />
-<img src="./app/assets/images/deletechannel.png" align="center" />
-<br />
-<br />
+
 
 
 
