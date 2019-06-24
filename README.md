@@ -2,7 +2,7 @@
 
 Dunder, a Discord clone, is a chatting application that allows a user to talk to friends and strangers about anything they want using themed channels and servers
 
-[Live Demo](https://erised-app.herokuapp.com/#/)
+[Live Demo](https://dunder-app.herokuapp.com/#/)
 
 ## Technologies
 * Backend: Rails/ActiveRecord/PostgreSQL

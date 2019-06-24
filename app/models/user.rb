@@ -14,7 +14,6 @@ class User < ApplicationRecord
     through: :user_servers,
     source: :server
 
-
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(username, password)
