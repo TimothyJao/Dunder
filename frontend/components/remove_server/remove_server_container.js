@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { deleteServer } from '../../actions/server_actions';
 import { deleteUserServer } from '../../actions/user_server_actions';
-import deleteServerForm from './delete_server';
+import deleteServerForm from './remove_server';
 import { closeModal} from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
