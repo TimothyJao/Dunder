@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux';
 import {clearSessionErrors} from '../../actions/session_actions'
 import NewServerContainer from '../new_server/new_server_container';
-import DeleteServerContainer from '../remove_server/delete_server_container'
+import DeleteServerContainer from '../remove_server/remove_server_container'
 import CreateChannelContainer from '../new_channel/new_channel_container';
 import DeleteChannelContainer from '../delete_channel/delete_channel_container'
 import CreateDM from '../new_DM/new_DM_container'
