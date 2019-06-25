@@ -12,30 +12,7 @@ class ServerForm extends React.Component {
         this.handleJoinSubmit = this.handleJoinSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
-
-    update(field) {
-        return (e) => this.setState({ [field]: e.currentTarget.value })
-    }
-
-    handleCreateSubmit(e) {
-        e.preventDefault();
-        const server = Object.assign({}, this.state);
-        this.props.createServer(server).then((result) => {
-            this.props.closeModal();
-            this.props.history.push(`/browse/${result.payload.server.id}`);
-        });
-    }
-
-    handleJoinSubmit(e) {
-        e.preventDefault();
-        this.state.url = this.state.url.slice(-6);
-        const server = Object.assign({}, this.state);
-        this.props.createUserServer(server).then((server) => {
-            this.props.closeModal();
-            this.props.history.push(`/browse/${server.payload.server.id}`);
-        });
-    }
-
+    
     renderErrors() {
         if (this.props.errors) {
             return (
@@ -48,11 +25,6 @@ class ServerForm extends React.Component {
                 </ul>
             );
         }
-    }
-
-    switchToCreate(){
-        this.props.clearSessionErrors()
-        this.props.openModal('create')
     }
 
     serverOption(){
@@ -92,6 +64,31 @@ class ServerForm extends React.Component {
         
     }
 
+    update(field) {
+        return (e) => this.setState({ [field]: e.currentTarget.value })
+    }
+
+    back() {
+        return (
+            <div className="BACK" onClick={() => {
+                this.props.clearSessionErrors()
+                this.props.openModal('chooseOption')
+            }}>
+                <i className="fas fa-long-arrow-alt-left"></i>
+                <p>BACK</p>
+            </div>
+        )
+    }
+
+    handleCreateSubmit(e) {
+        e.preventDefault();
+        const server = Object.assign({}, this.state);
+        this.props.createServer(server).then((result) => {
+            this.props.closeModal();
+            this.props.history.push(`/browse/${result.payload.server.id}`);
+        });
+    }
+
     createServer(){
         return(
             <div className="server-box">
@@ -101,28 +98,29 @@ class ServerForm extends React.Component {
                         <p className="selection-description"> By creating a server, you will have access to free voice</p>
                         <p className="selection-description">and text chat to use amongst your friends.</p>
                     </div>
-                    <div className = "create-form-container">
-                        <form className="create-form" onSubmit={this.handleCreateSubmit}>
-                            <label className="server-name">SERVER NAME <br />
-                                <input type="text" value={this.state.name} onChange={this.update('name')} />
-                            </label>
-                            {this.renderErrors()}
-                            <input className="server-submit" type="submit" value={"Create Server"} />
-                        </form>
-                    </div>
-                    <div className="BACK" onClick={()=>{
-                        this.props.clearSessionErrors()
-                        this.props.openModal('chooseOption')
-                    }}>
-                        <i className="fas fa-long-arrow-alt-left"></i>
-                        <p>BACK</p>
-                    </div>
-                        
+                    <form className="create-form" onSubmit={this.handleCreateSubmit}>
+                        <label className="server-name">SERVER NAME <br />
+                            <input type="text" value={this.state.name} onChange={this.update('name')} />
+                        </label>
+                        {this.renderErrors()}
+                        <input className="server-submit" type="submit" value={"Create Server"} />
+                    </form>
+                    {this.back()}                        
                 </div>
             </div>
         )
     }
 
+    handleJoinSubmit(e) {
+        e.preventDefault();
+        this.state.url = this.state.url.slice(-6);
+        const server = Object.assign({}, this.state);
+        this.props.createUserServer(server).then((server) => {
+            this.props.closeModal();
+            this.props.history.push(`/browse/${server.payload.server.id}`);
+        });
+    }
+    
     joinServer() {
         return (
             <div className="server-box">
@@ -140,14 +138,7 @@ class ServerForm extends React.Component {
                         {this.renderErrors()}
                         <input className="server-join" type="submit" value={"Join Server"} />
                     </form>
-                    <div className="BACK" onClick={() => {
-                        this.props.clearSessionErrors()
-                        this.props.openModal('chooseOption')                
-                    }}>
-                        <i className="fas fa-long-arrow-alt-left"></i>
-                        <p>BACK</p>
-                    </div>
-
+                    {this.back()}
                 </div>
             </div>
         )
