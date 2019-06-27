@@ -1,5 +1,12 @@
+body{
+   min-width:600px;        /* Suppose you want minimum width of 1000px */
+   width: auto !important;  /* Firefox will set width as auto */
+   width:600px;            /* As IE6 ignores !important it will set width as 1000px; */
+}
+
 .browseForm{
     display: flex;
+    justify-content: flex-end;
 }
 
 .server-container{
@@ -27,6 +34,7 @@
 .side-nav{
     display: flex;
     position: absolute;
+    left: 0;
     width: 312px;
     height: 100%;
 }
@@ -51,7 +59,7 @@
 
 .main-content{
     display: flex;
-    width: calc(100% - 312px);
+    width: calc(100% - 312px - 225px);
     position: fixed;
     left: 312px;
     height: 100%;
@@ -61,6 +69,14 @@
 
 .logoutButton{
     position: fixed;
+}
+
+.logoutButton .header-button{
+    border: 0px solid transparent;
+}
+
+.logoutButton .header-button:hover{
+    background-color: red;
 }
 
 .content-divider{
@@ -79,4 +95,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.search-bar{
+    position: fixed;
+    width: 225px;
+    background-color: white;
+    top: 50px;
+    height: 100%;
+    display: flex;
 }

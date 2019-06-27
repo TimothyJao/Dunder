@@ -97,8 +97,7 @@ class ChatRoom extends React.Component {
         this.messageList = oldMessageList.concat(this.messageList);
 
         return(
-            <div className="chatroom-container">               
-                <div>ChatRoom</div>
+            <div className="chatroom-container">  
                 <div className="message-list">{this.messageList}</div>
                 <MessageFormContainer />
             </div>

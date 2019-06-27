@@ -47,7 +47,9 @@ class BrowseForm extends React.Component {
                     <hr className="content-divider" width="100%" />
                     {this.addChat()}
                 </div>
-                
+                <div className="search-bar" />
+                    <div className="content-header"> 
+                </div>
             </div>
         )
     }

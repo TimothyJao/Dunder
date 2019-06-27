@@ -7,7 +7,7 @@
 }
 
 .message-input{
-    width: 82%;
+    width: 100%;
     position: relative;
     top: 28%;
     height: 25px;
@@ -22,7 +22,7 @@
 .message-form{
     position: fixed;
     top: 84%;
-    width: 86%;
+    width: calc(100% - 312px - 250px);
 }
 
 .message-form ::placeholder{
@@ -32,8 +32,9 @@
 .message-list{
     position: fixed;
     height: 83%;
+    top: 60px;
     left: 355.44px;
-    width: 66.3%;
+    width: calc(100% - 312px - 335px);
     padding-right: 65px;
     padding-bottom: 20px;
     background: white;
