@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ChatRoom from "../chatroom/chatroom_container"
 import Servers from "../server/server_form_container"
 import Channels from "../channel/channel_form_container"
+import Search from "../search/search_container"
 
 class BrowseForm extends React.Component {
 
@@ -47,8 +48,10 @@ class BrowseForm extends React.Component {
                     <hr className="content-divider" width="100%" />
                     {this.addChat()}
                 </div>
-                <div className="search-bar" />
-                    <div className="content-header"> 
+                <div className="search-bar" >
+
+                    < Search />
+                    <hr className="content-divider" width="100%" />
                 </div>
             </div>
         )
