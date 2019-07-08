@@ -21,13 +21,14 @@ class Search extends React.Component {
     }
 
     listUsers(){
-        if(this.state.searchUsers){
+        if(this.state.searchUsers.length > 0){
+            debugger
             return(
                 <ul>
                     {this.state.searchUsers.forEach( user => {
                         return(
                             <li>
-                                {user.username}
+                                <p>{user.username}</p>
                             </li>
                         )
                     })}
