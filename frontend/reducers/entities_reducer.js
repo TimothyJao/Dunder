@@ -5,11 +5,13 @@ import servers from './servers_reducer'
 import users_servers from './users_servers_reducer'
 import channels from './channels_reducer'
 import messages from './messages_reducer'
+import search from './search_reducer'
 
 export default combineReducers({
     users,
     servers,
     users_servers,
     channels,
-    messages
+    messages,
+    search
 });

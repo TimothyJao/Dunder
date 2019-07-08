@@ -8,7 +8,7 @@ const channelsReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_CHANNEL:
             return Object.assign({}, state, {[action.currentChannel.channel.id]: action.currentChannel.channel});
         case DELETE_CHANNEL:
-            var newState = Object.assign({}, state);
+            let newState = Object.assign({}, state);
             delete (newState[action.channel_id.id])
             return newState;
         case LOGOUT_CURRENT_USER:

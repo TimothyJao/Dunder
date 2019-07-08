@@ -4,7 +4,8 @@ import { findUsers } from '../../actions/session_actions'
 
 const mapStateToProps = state => {
     return{
-        searchUsers: state.entities.searchUsers
+        searchUsers: state.entities.search.searchUsers,
+        currentUser: state.session
     }
 };
 

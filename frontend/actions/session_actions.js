@@ -26,9 +26,9 @@ export const clearSessionErrors = () => ({
     type: CLEAR_SESSION_ERRORS
 })
 
-export const receiveUsers = users => ({
+export const receiveUsers = searchUsers => ({
     type: RECEIVE_USERS,
-    users
+    searchUsers
 })
 
 export const signup = user => dispatch => {
