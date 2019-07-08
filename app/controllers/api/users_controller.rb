@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @users = User.where("LOWER(username) LIKE ?", `%#{params[:search].lower()}%`)
+        @users = User.where("LOWER(username) LIKE ?", "%#{params[:search].downcase}%")
+        debugger
         if @users
             render "api/users/index"
         end

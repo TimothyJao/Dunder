@@ -24,7 +24,7 @@ export const logout = () => (
 export const findUsers = (search) => (
     $.ajax({
         method: "GET",
-        url: "api/users",
+        url: "api/user",
         data: {search}
     })
 )

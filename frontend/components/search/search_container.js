@@ -2,8 +2,10 @@ import { connect } from 'react-redux';
 import Search from './search';
 import { findUsers } from '../../actions/session_actions'
 
-const mapStateToProps = (state, ownProps) => {
-    return{}
+const mapStateToProps = state => {
+    return{
+        searchUsers: state.entities.searchUsers
+    }
 };
 
 const mapDispatchToProps = dispatch => {
