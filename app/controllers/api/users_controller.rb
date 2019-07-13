@@ -10,7 +10,12 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @users = User.where("LOWER(username) LIKE ?", "%#{params[:search].downcase}%")
+        if params[:search].length > 0
+            @users = User.where("LOWER(username) LIKE ?", "%#{params[:search].downcase}%")
+        else
+            @users = []
+        end
+        
         if @users
             render "api/users/index"
         end
