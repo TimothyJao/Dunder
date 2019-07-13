@@ -22,17 +22,17 @@ class Search extends React.Component {
 
     listUsers(){
         if(this.state.searchUsers.length > 0){
-            debugger
+            // debugger
             return(
-                <ul>
-                    {this.state.searchUsers.forEach( user => {
+                <ul className="search-list">
+                    {this.state.searchUsers.map( user => {
+                        // debugger
                         return(
-                            <li>
+                            <li key = {user.id} className = "search-user">
                                 <p>{user.username}</p>
                             </li>
                         )
                     })}
-    
                 </ul>
                 
             )
