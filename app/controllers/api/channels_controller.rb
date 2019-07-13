@@ -19,6 +19,7 @@ class Api::ChannelsController < ApplicationController
 
     def create
         @DM = Channel.where("sender_id = ? AND recipient_id = ?", channel_params[:sender_id], channel_params[:recipient_id])
+        @DM += Channel.where("recipient_id = ? AND sender_id = ?", channel_params[:sender_id], channel_params[:recipient_id])
         @channel = Channel.where("server_id = ? AND name = ?", channel_params[:server_id], channel_params[:name])
         if !@DM.empty?
             render json: ["You already have a chat with this user"], status: 422

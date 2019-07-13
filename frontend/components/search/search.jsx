@@ -14,6 +14,10 @@ class Search extends React.Component {
         return e => this.props.findUsers(e.currentTarget.value);
     }
 
+    clickHandler(){
+        // return () => this.props.
+    }
+
     componentDidUpdate(){
         if(this.state.searchUsers != this.props.searchUsers){
             this.setState({searchUsers: this.props.searchUsers})
@@ -22,14 +26,14 @@ class Search extends React.Component {
 
     listUsers(){
         if(this.state.searchUsers.length > 0){
-            // debugger
             return(
                 <ul className="search-list">
                     {this.state.searchUsers.map( user => {
-                        // debugger
                         return(
                             <li key = {user.id} className = "search-user">
-                                <p>{user.username}</p>
+                                <div className="user-div" onClick={this.clickHandler(user.id)}>
+                                    {user.username}
+                                </div>
                             </li>
                         )
                     })}

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { findUsers } from '../../actions/session_actions'
+import { fetchDMs } from '../../actions/channel_actions'
 
 const mapStateToProps = state => {
     return{

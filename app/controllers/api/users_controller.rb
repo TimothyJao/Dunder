@@ -10,6 +10,15 @@ class Api::UsersController < ApplicationController
     end
 
     def show
+        @user = User.find_by(username: params[:username])
+        if @user
+            render "api/users/show"
+        else
+            render json: ["User cannot be found"], status: 422
+        end
+    end
+
+    def search_users
         if params[:search].length > 0
             @users = User.where("LOWER(username) LIKE ?", "%#{params[:search].downcase}%")
         else

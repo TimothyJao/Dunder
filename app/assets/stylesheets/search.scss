@@ -15,9 +15,23 @@
 }
 
 .search-list{
+    width: 100%;
     height: 100%;
+    right: 0;
+    padding: 0;
+    background-color: #f3f3f3;
 }
 
-.search-user > p{
-    color: black;
+.user-div{
+    padding: 10px 0px;
+    color:black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-div:hover{
+    background-color: #e6e6e6;
 }
