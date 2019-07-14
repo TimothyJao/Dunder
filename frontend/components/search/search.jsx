@@ -8,14 +8,18 @@ class Search extends React.Component {
                         currentUser: props.currentUser         
                     }
         this.lookup = this.lookup.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     lookup(){
         return e => this.props.findUsers(e.currentTarget.value);
     }
 
-    clickHandler(){
-        debugger
+    handleClick(username) {
+        let that = this
+        this.props.createDM(this.state.currentUser.id, username).then((data) => {
+            that.props.history.push(`/browse/DMs/${data.currentChannel.channel.id}`);
+        });
     }
 
     componentDidUpdate(){
@@ -31,7 +35,7 @@ class Search extends React.Component {
                     {this.state.searchUsers.map( user => {
                         return(
                             <li key = {user.id} className = "search-user">
-                                <div className="user-div" onclick={this.clickHandler(user.id)}>
+                                <div className="user-div" onClick={ () => this.handleClick(user.username)}>
                                     {user.username}
                                 </div>
                             </li>
@@ -47,7 +51,7 @@ class Search extends React.Component {
         return(
             <>
                 <form className="search-form">
-                    <input type="text" className="search-input" placeholder="&#128269; Search Users" onChange={this.lookup()}/>
+                    <input type="text" className="search-input" placeholder="&#128269; Search All Users" onChange={this.lookup()}/>
                 </form>
                 {this.listUsers()}
             </>

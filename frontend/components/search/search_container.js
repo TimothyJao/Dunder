@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { findUsers } from '../../actions/session_actions'
-import { fetchDMs } from '../../actions/channel_actions'
+import { createDM } from '../../actions/channel_actions'
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => {
     return{
@@ -12,8 +13,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
+        createDM: (sender_id, recipient_username) => dispatch(createDM(sender_id, recipient_username)),
         findUsers: (search)=>dispatch(findUsers(search))
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
