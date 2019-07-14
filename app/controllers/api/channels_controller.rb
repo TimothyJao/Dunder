@@ -22,7 +22,10 @@ class Api::ChannelsController < ApplicationController
         @DM += Channel.where("recipient_id = ? AND sender_id = ?", channel_params[:sender_id], channel_params[:recipient_id])
         @channel = Channel.where("server_id = ? AND name = ?", channel_params[:server_id], channel_params[:name])
         if !@DM.empty?
-            render json: ["You already have a chat with this user"], status: 422
+            @channel = @DM[0]
+            @sender = (User.find(@channel.sender_id))
+            @recipient = (User.find(@channel.recipient_id))
+            render "api/channels/dm"
         elsif !@channel.empty?
             render json: ["Channel already exists"], status: 422
         else

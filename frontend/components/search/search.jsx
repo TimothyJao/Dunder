@@ -15,7 +15,7 @@ class Search extends React.Component {
     }
 
     clickHandler(){
-        // return () => this.props.
+        debugger
     }
 
     componentDidUpdate(){
@@ -31,7 +31,7 @@ class Search extends React.Component {
                     {this.state.searchUsers.map( user => {
                         return(
                             <li key = {user.id} className = "search-user">
-                                <div className="user-div" onClick={this.clickHandler(user.id)}>
+                                <div className="user-div" onclick={this.clickHandler(user.id)}>
                                     {user.username}
                                 </div>
                             </li>
