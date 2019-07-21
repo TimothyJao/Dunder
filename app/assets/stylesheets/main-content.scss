@@ -87,3 +87,27 @@
     height: 1px;
     border-width: 0px;
 }
+
+.welcome-message{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    height: 150px;
+    width: 70%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.welcome-header{
+    color: #7289da;
+    font-size: 32px;
+    text-align: center;
+}
+
+.welcome-body{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}

@@ -26,6 +26,17 @@ class BrowseForm extends React.Component {
         }
     }
 
+    addWelcome(){
+        if (this.isHome()) {
+            return(
+                <div className = "welcome-message">
+                    <p className = "welcome-header"> Welcome to Dunder! </p>
+                    <p className = "welcome-body"> Feel free to browse servers and channels, message other members, and create or delete anything you want! </p>
+                </div>
+            )
+        }
+    }
+
     render(){
         return (
             <div className="browseForm">
@@ -46,6 +57,7 @@ class BrowseForm extends React.Component {
                         </div>
                     </div>
                     <hr className="content-divider" width="100%" />
+                    {this.addWelcome()}
                     {this.addChat()}
                 </div>
                 <div className="search-bar" >
