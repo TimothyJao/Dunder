@@ -23,9 +23,14 @@ class Search extends React.Component {
     }
 
     componentDidUpdate(){
-        if(this.state.searchUsers != this.props.searchUsers){
-            this.setState({searchUsers: this.props.searchUsers})
+        if (this.state.searchUsers != this.props.searchUsers) {
+            if (this.props.searchUsers) { this.setState({ searchUsers: this.props.searchUsers })}
+            
         }
+    }
+
+    componentWillUnmount(){
+        this.setState({searchUsers: []})
     }
 
     listUsers(){
@@ -33,14 +38,16 @@ class Search extends React.Component {
             return(
                 <ul className="search-list">
                     {this.state.searchUsers.map( user => {
-                        return(
-                            <li key = {user.id} className = "search-user">
-                                <div className="user-div" onClick={ () => this.handleClick(user.username)}>
-                                    {user.username}
-                                </div>
-                            </li>
-                        )
-                    })}
+                        {if(user.username != this.state.currentUser.username){
+                            return(
+                                <li key = {user.id} className = "search-user">
+                                    <div className="user-div" onClick={ () => this.handleClick(user.username)}>
+                                        {user.username}
+                                    </div>
+                                </li>
+                            )
+                        }
+                    }})}
                 </ul>
                 
             )
