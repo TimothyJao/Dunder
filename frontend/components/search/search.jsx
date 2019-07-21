@@ -9,10 +9,14 @@ class Search extends React.Component {
                     }
         this.lookup = this.lookup.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.debounce = this.debounce.bind(this)
     }
 
     lookup(){
-        return e => this.props.findUsers(e.currentTarget.value);
+        return e => {
+            let debouncedFindUsers = this.debounce(this.props.findUsers, 300);
+            debouncedFindUsers(e.currentTarget.value);
+        }
     }
 
     handleClick(username) {
@@ -26,6 +30,19 @@ class Search extends React.Component {
         if (this.state.searchUsers != this.props.searchUsers) {
             if (this.props.searchUsers) { this.setState({ searchUsers: this.props.searchUsers })}
             
+        }
+    }
+
+    debounce(func, time){
+        let that = this
+        return function(args){
+            let previousCall = that.lastCall;
+            that.lastCall = Date.now();
+            if (previousCall && ((that.lastCall - previousCall) <= time)){
+                clearTimeout(that.lastCallTimer)
+            }
+
+            that.lastCallTimer = setTimeout(()=>func(args), time)
         }
     }
 
