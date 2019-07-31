@@ -1,7 +1,8 @@
 /*Stylesheet for all user-auth*/
 
 /* Used to make sure background image covers the screen */
-html, body {
+html, 
+body {
     margin: 0;
     height: 100%;
 }
@@ -60,18 +61,20 @@ html, body {
     height: 25%;
 }
 
-.welcome h3{
-    position: relative;
-    font-size: 30px;
-    top: 35px;
-    color: #dddddd;
-}
+.welcome {
+    h3{
+        position: relative;
+        font-size: 30px;
+        top: 35px;
+        color: #dddddd;
+    }
 
-.welcome p{
-    position: relative;
-    font-size: 16px;
-    top: 45px;
-    color: #808080;
+    p{
+        position: relative;
+        font-size: 16px;
+        top: 45px;
+        color: #808080;
+    }
 }
 
 /* form for user-auth */
@@ -172,6 +175,11 @@ ul {
 /* Styling for the guest page */
 .guest-box{
     height: 400px;
+    
+    .submit{
+        position: relative;
+        top: 40%;
+    }
 }
 
 .guest-welcome h3{
@@ -212,11 +220,6 @@ ul {
 #dunder-selector.select-arrow-active:after{
     border-color: transparent transparent #fff transparent;
     top: 7px;
-}
-
-.guest-box .submit{
-    position: relative;
-    top: 40%;
 }
 
 .guest-switch{
