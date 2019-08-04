@@ -177,11 +177,6 @@ class channelForm extends React.Component {
                     </div>
                     <ul className="channel-list">
                         {Object.values(this.state.channels).map((channel) => {
-                            if(currentId === ownerId && channel.name != "general"){
-                                ownerTrash = <i className="fas fa-trash-alt" onClick={() => this.props.openModal('deleteChannel')}></i>;
-                            } else{
-                                ownerTrash = <></>
-                            }
                             if (channel.id === this.props.channelId) {
                                 return (
                                     <li className="channel-group-selected" key={channel.id}>
