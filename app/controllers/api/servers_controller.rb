@@ -1,6 +1,15 @@
 class Api::ServersController < ApplicationController
     def index
         @servers = current_user.servers
+
+        @servers.each do |server|
+            server.channels.each do |channel|
+                if channel.name == "general"
+                    server[:general_id] = channel.id
+                    debugger
+                end
+            end
+        end
         render "api/servers/index"
     end
     
