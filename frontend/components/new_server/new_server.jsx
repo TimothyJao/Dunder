@@ -50,7 +50,7 @@ class ServerForm extends React.Component {
                         this.props.openModal('joinServer')
                     }}>
                         <h3 className="join">JOIN</h3>
-                        <p className="description">Enter an Instant Invite and join your friend's server.</p>
+                        <p className="description">Enter an Invite Code and join your friend's server.</p>
                         <div className="icon-holder">
                             <i className="fas fa-sign-in-alt"></i>
                         </div>
@@ -129,7 +129,7 @@ class ServerForm extends React.Component {
                     <div className="create-header">
                         <p className="selection-description"> Enter an Instant Invite below to join an existing</p>
                         <p className="selection-description">server. The invite will look something like this:</p>
-                        <p className="example">https://dunder.com/upEpNg</p> 
+                        <p className="example">upEpNgZ</p> 
                     </div>
                     <form className="create-form" onSubmit={this.handleJoinSubmit}>
                         <label className="server-name">SERVER URL <br />

@@ -86,11 +86,11 @@ class deleteServerForm extends React.Component {
                         <h3 className="header-print">INVITE FRIENDS TO '{this.props.servers[this.serverId].name.toUpperCase()}'</h3>
                     </div>
                     <div className="invite-message">
-                        <p className="message-print"> Share this link with others to grant access to this server </p>
+                        <p className="message-print"> Share this code with others to grant access to this server </p>
                     </div>
 
                     <div className="invite-selection">
-                        <p>https://dunder.com/{this.props.servers[this.serverId].url}</p>
+                        <p>h{this.props.servers[this.serverId].url}</p>
                     </div>
                 </div>
             </>

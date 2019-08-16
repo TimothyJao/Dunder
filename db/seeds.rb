@@ -27,10 +27,10 @@ User.create({username: "FutureDwight", password: "JimHalpert"})
 
 Server.destroy_all
 
-Server.create({name: "Dunder Mifflin", owner_id: 1, url: "5JX1ng"})
-Server.create({name: "HIDE FROM MICHAEL", owner_id: 2, url: "NnxYhR"})
-Server.create({name: "Party Planning Committee", owner_id: 1, url: "w6c5D4"})
-Server.create({name: "Creed's Thoughts", owner_id: 15, url:"mG6dAy"})
+Server.create({name: "Dunder Mifflin", owner_id: 1, url: "5JX1ng", general_id: 1})
+Server.create({name: "HIDE FROM MICHAEL", owner_id: 2, url: "NnxYhR", general_id: 5})
+Server.create({name: "Party Planning Committee", owner_id: 1, url: "w6c5D4", general_id: 8})
+Server.create({name: "Creed's Thoughts", owner_id: 15, url:"mG6dAy", general_id: 11})
 
 UserServer.destroy_all
 
