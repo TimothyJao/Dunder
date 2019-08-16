@@ -117,7 +117,7 @@ class ServerForm extends React.Component {
         const server = Object.assign({}, this.state);
         this.props.createUserServer(server).then((server) => {
             this.props.closeModal();
-            this.props.history.push(`/browse/${server.payload.server.id}`);
+            this.props.history.push(`/browse/${server.payload.server.id}/${server.payload.server.general_id}`);
         });
     }
     
