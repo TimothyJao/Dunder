@@ -35,7 +35,7 @@ class ServerForm extends React.Component {
                             <div className="button-group" key={server.id}>
                                 <div className="circleThing" />
                                 <li>
-                                    <Link className="server-link" to={`/browse/${server.id}`} >
+                                    <Link className="server-link" to={`/browse/${server.id}/${server.general_id}`}>
                                         <span>{server.name[0]}</span>
                                     </Link>
                                 </li>

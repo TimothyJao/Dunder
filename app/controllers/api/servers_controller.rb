@@ -6,7 +6,6 @@ class Api::ServersController < ApplicationController
             server.channels.each do |channel|
                 if channel.name == "general"
                     server[:general_id] = channel.id
-                    debugger
                 end
             end
         end
