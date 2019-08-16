@@ -20,6 +20,7 @@ class Api::ServersController < ApplicationController
             @user_server.save
             @channel = Channel.new({server_id: @server.id, name: "general"})
             @channel.save
+            @server.general_id = @channel.id
             render "api/servers/show"
         else
             render json: @server.errors.full_messages, status: 422
