@@ -14,7 +14,7 @@ class Search extends React.Component {
 
     lookup(){
         return e => {
-            let debouncedFindUsers = this.debounce(this.props.findUsers, 300);
+            let debouncedFindUsers = this.debounce(this.props.findUsers, 600);
             debouncedFindUsers(e.currentTarget.value);
         }
     }
